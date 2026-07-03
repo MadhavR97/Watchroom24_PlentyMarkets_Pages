@@ -3091,6 +3091,26 @@
         font-size: 14px;
       }
     }
+
+    /* ═══════════════════════════════════════════════
+       PLENTYONE DEFAULT WHITE SPACE FIX
+    ═══════════════════════════════════════════════ */
+    /* Main container ni default space kadhva mate */
+    main, .page-wrapper, .app-main {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    footer:not(:has(.footer-grid)), 
+    .footer-wrapper, 
+    div[data-testid="footer"] {
+      display: none !important;
+    }
+    
+    .widget-rich-text, .plenty-widget {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
   </style>
 </head>
 
