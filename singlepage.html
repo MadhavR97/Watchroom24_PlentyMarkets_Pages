@@ -1,0 +1,2090 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paul Valentine Sailor Line 36mm Rose – Watchroom24</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    /* ══════════════════════════════════════
+       CSS VARIABLES & RESET
+    ══════════════════════════════════════ */
+    :root {
+      --navy: #0a1c36;
+      --navy2: #0d2244;
+      --gold: #ffb600;
+      --gold-dark: #c4a962;
+      --white: #ffffff;
+      --bg-light: #f8f9fa;
+      --text-dark: #212529;
+      --text-light: #6c757d;
+      --border: #e0e0e0;
+      --red: #dc3545;
+      --green: #198754;
+      --font-display: "Inter";
+      --font-body: "Inter";
+      --radius: 6px;
+      --shadow-sm: 0 2px 8px rgba(10, 28, 54, 0.07);
+      --shadow-md: 0 6px 24px rgba(10, 28, 54, 0.12);
+      --shadow-lg: 0 16px 48px rgba(10, 28, 54, 0.18);
+    }
+
+    nav[data-testid="breadcrumbs"] {
+      display: none !important;
+    }
+
+    div[data-testid="narrow-container"] {
+      padding: 0 !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ══════════════════════════════════════
+       TOP BAR
+    ══════════════════════════════════════ */
+    .topbar {
+      background: var(--navy);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 182, 0, 0.12);
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar-l,
+    .topbar-r {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .topbar a {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.55);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .topbar a:hover {
+      color: var(--gold-dark);
+    }
+
+    .topbar .gold-link {
+      color: var(--gold-dark) !important;
+      font-weight: 600;
+    }
+
+    .topbar i {
+      font-size: 11px;
+    }
+
+    .tdiv {
+      width: 1px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hdr {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      min-width: 170px;
+      width: 10%;
+      margin-left: -25px;
+    }
+
+    .logo img {
+      width: 120%;
+      height: 100%;
+      margin-top: 10px;
+    }
+
+    .search-bar {
+      flex: 1;
+      display: flex;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-light);
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .search-bar:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(255, 182, 0, 0.12);
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 11px 16px;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 13px;
+      color: var(--text-dark);
+    }
+
+    .search-bar input::placeholder {
+      color: var(--text-light);
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .search-bar button {
+      background: var(--gold-dark);
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      color: var(--navy);
+      font-size: 15px;
+      transition: background 0.2s;
+    }
+
+    .search-bar button:hover {
+      background: var(--gold);
+    }
+
+    .hdr-icons {
+      display: flex;
+      gap: 4px;
+    }
+
+    .icon-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 8px 12px;
+      border-radius: var(--radius);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-light);
+      cursor: pointer;
+      transition:
+        color 0.2s,
+        background 0.2s;
+      border: none;
+      background: none;
+      position: relative;
+    }
+
+    .icon-btn:hover {
+      color: var(--navy);
+      background: var(--bg-light);
+    }
+
+    .icon-btn i {
+      font-size: 18px;
+    }
+
+    .icon-btn .cbadge {
+      position: absolute;
+      top: 4px;
+      right: 7px;
+      background: var(--gold-dark);
+      color: var(--navy);
+      font-size: 9px;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ══════════════════════════════════════
+       NAVIGATION
+    ══════════════════════════════════════ */
+    nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item>a {
+      font-family: var(--font-body);
+      display: block;
+      padding: 14px 22px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition:
+        color 0.2s,
+        border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-item>a:hover,
+    .nav-item>a.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .mega-drop {
+      font-family: var(--font-body);
+      display: none;
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border-top: 2px solid var(--gold-dark);
+      border-bottom: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 24px 28px;
+      z-index: 400;
+      min-width: 520px;
+    }
+
+    .nav-item:hover .mega-drop {
+      display: flex;
+    }
+
+    .mega-drop-col {
+      flex: 1;
+      min-width: 120px;
+      padding: 0 12px;
+      border-right: 1px solid var(--border);
+    }
+
+    .mega-drop-col:first-child {
+      padding-left: 0;
+    }
+
+    .mega-drop-col:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+
+    .mega-drop-col a:first-child {
+      font-family: var(--font-body);
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--navy);
+      padding: 0 0 8px;
+      margin-bottom: 6px;
+      border-bottom: 1.5px solid var(--border);
+      transition: color 0.2s;
+    }
+
+    .mega-drop-col a:first-child:hover {
+      color: var(--gold-dark);
+    }
+
+    .mega-drop-col a:not(:first-child) {
+      font-family: var(--font-body);
+      display: block;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-light);
+      padding: 5px 0;
+      transition:
+        color 0.2s,
+        padding-left 0.15s;
+    }
+
+    .mega-drop-col a:not(:first-child):hover {
+      color: var(--gold-dark);
+      padding-left: 4px;
+    }
+
+    /* ══════════════════════════════════════
+       MOBILE NAV
+    ══════════════════════════════════════ */
+    .nav-mobile-toggle {
+      display: none;
+      font-family: var(--font-body);
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--navy);
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .nav-mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .nav-mobile-menu.open {
+      display: flex;
+    }
+
+    .nav-mobile-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-mobile-item-header {
+      font-family: var(--font-body);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav-mobile-item-header i {
+      font-size: 11px;
+      transition: transform 0.3s;
+    }
+
+    .nav-mobile-item.open .nav-mobile-item-header i {
+      transform: rotate(180deg);
+    }
+
+    .nav-mobile-sub {
+      display: none;
+      flex-direction: column;
+      background: var(--bg-light);
+      padding: 8px 15px 12px 32px;
+      border-top: 1px solid var(--border);
+      margin-right: 10px;
+    }
+
+    .nav-mobile-item.open .nav-mobile-sub {
+      display: flex;
+    }
+
+    .nav-mobile-sub a {
+      font-family: var(--font-body);
+      padding: 7px 0;
+      font-size: 13px;
+      color: var(--text-light);
+      transition: color 0.2s;
+      display: block;
+    }
+
+    .nav-mobile-sub a:hover {
+      color: var(--gold-dark);
+    }
+
+    .nav-mobile-group {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      margin-bottom: 2px;
+    }
+
+    .nav-mobile-group:last-child {
+      border-bottom: none;
+    }
+
+    .nav-mobile-group-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav-mobile-group-header span {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .nav-mobile-group-header i {
+      font-size: 10px;
+      color: var(--text-light);
+      transition: transform 0.25s;
+    }
+
+    .nav-mobile-group.open .nav-mobile-group-header i {
+      transform: rotate(180deg);
+    }
+
+    .nav-mobile-group-links {
+      display: none;
+      flex-direction: column;
+      padding: 0 0 10px 14px;
+    }
+
+    .nav-mobile-group.open .nav-mobile-group-links {
+      display: flex;
+    }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.55);
+      padding: 35px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .f-brand .logo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: -13px;
+      margin-bottom: 40px;
+    }
+
+    .f-brand .logo img {
+      width: 170px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 10px;
+      margin-left: 2px;
+    }
+
+    .f-brand p {
+      font-family: var(--font-body);
+      margin-top: -50px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.8;
+      max-width: 270px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .soc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.55);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .soc:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .f-contact {
+      margin-top: 22px;
+    }
+
+    .f-ci {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 9px;
+    }
+
+    .f-ci i {
+      color: var(--gold-dark);
+      font-size: 13px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .f-ci span {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .f-col h4 {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .f-col ul {
+      list-style: none;
+    }
+
+    .f-col ul li {
+      margin-bottom: 9px;
+    }
+
+    .f-col ul li a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.2s;
+    }
+
+    .f-col ul li a:hover {
+      color: var(--gold);
+    }
+
+    .f-support {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .f-sup {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 20px 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .f-sup:last-child {
+      border-right: none;
+    }
+
+    .f-sup i {
+      font-size: 18px;
+      color: var(--gold-dark);
+      flex-shrink: 0;
+    }
+
+    .f-sup strong {
+      font-family: var(--font-body);
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .f-sup span {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .f-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .f-bottom p {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ══════════════════════════════════════
+       PRODUCT PAGE STYLES
+    ══════════════════════════════════════ */
+    .back-bar {
+      padding: 16px 0 0;
+    }
+
+    .back-link {
+      font-family: var(--font-body);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-light);
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--navy);
+    }
+
+    .back-link i {
+      font-size: 11px;
+    }
+
+    .product-section {
+      padding: 20px 0 56px;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* Image column */
+    .product-image-col {
+      position: sticky;
+      top: 90px;
+    }
+
+    .main-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-light);
+      aspect-ratio: 1 / 1;
+    }
+
+    .main-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition:
+        transform 0.5s ease,
+        opacity 0.2s ease;
+    }
+
+    .main-image-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-placeholder img {
+      width: 60%;
+      object-fit: contain;
+    }
+
+    .img-sale-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--red);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+    }
+
+    .thumb-strip {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .thumb {
+      width: 76px;
+      height: 76px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .thumb.active {
+      border-color: var(--gold);
+    }
+
+    .thumb:hover {
+      border-color: var(--gold-dark);
+    }
+
+    /* Info column */
+    .product-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .prod-brand-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .prod-title {
+      font-family: var(--font-body);
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .stars-lg {
+      color: var(--gold-dark);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .rating-score {
+      font-family: var(--font-body);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .rating-count {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    .prod-tagline {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    /* Price box */
+    .price-box {
+      background: var(--bg-light);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      margin-bottom: 18px;
+    }
+
+    .price-main-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .price-current {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .price-old {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-light);
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    .price-saving {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .price-tax {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    .price-tax a {
+      font-family: var(--font-body);
+      color: var(--navy);
+      text-decoration: underline;
+      font-weight: 400;
+    }
+
+    /* Cart row */
+    .cart-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn-add-cart {
+      font-family: var(--font-body);
+      flex: 1;
+      padding: 15px 24px;
+      background: var(--gold-dark);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-add-cart:hover {
+      box-shadow: 0 6px 20px rgba(255, 182, 0, 0.35);
+    }
+
+    .btn-wish {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .btn-wish:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* Benefits box */
+    .benefits-box {
+      background: #f0faf5;
+      border: 1.5px solid #b8e8ce;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+    }
+
+    .benefits-title {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .benefits-title i {
+      color: var(--green);
+      font-size: 14px;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .benefit-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .benefit-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    .benefit-icon.green {
+      background: #d1f0e0;
+      color: var(--green);
+    }
+
+    .benefit-icon.blue {
+      background: #d0e8ff;
+      color: #0066cc;
+    }
+
+    .benefit-icon.orange {
+      background: #ffecd0;
+      color: #d97706;
+    }
+
+    .benefit-text strong {
+      font-family: var(--font-body);
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .benefit-text span {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    /* Product description */
+    .prod-desc-section {
+      padding-top: 4px;
+    }
+
+    .prod-desc-section h2 {
+      font-family: var(--font-body);
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .prod-desc-section p {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text-dark);
+    }
+
+    /* Trust section */
+    .trust-section {
+      padding: 0 0 48px;
+    }
+
+    .trust-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 24px 24px;
+    }
+
+    .trust-icons-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .trust-col .t-ico {
+      font-size: 26px;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+    }
+
+    .trust-col strong {
+      font-family: var(--font-body);
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+
+    .trust-col span {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    .trust-stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .ts-item {
+      text-align: center;
+      padding: 0 48px;
+      border-right: 1px solid var(--border);
+    }
+
+    .ts-item:last-child {
+      border-right: none;
+    }
+
+    .ts-item .num {
+      font-family: var(--font-body);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .ts-item .num i {
+      font-size: 16px;
+      color: var(--gold-dark);
+    }
+
+    .ts-item .lbl {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — DESKTOP
+    ══════════════════════════════════════ */
+    @media (min-width: 1200px) {
+      nav>.nav-inner {
+        display: flex;
+      }
+
+      .nav-mobile-menu {
+        display: none !important;
+      }
+
+      .nav-mobile-toggle {
+        display: none !important;
+      }
+
+      .footer-grid {
+        grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      }
+
+      .f-support {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — TABLET
+    ══════════════════════════════════════ */
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .logo img {
+        width: 200px;
+        margin-top: 10px;
+        height: auto;
+      }
+
+      .nav-item>a {
+        padding: 12px 14px;
+        font-size: 10px;
+      }
+
+      /* ── MAIN CONTENT — Tablet ── */
+      .product-layout {
+        gap: 32px;
+      }
+
+      .product-image-col {
+        top: 80px;
+      }
+
+      .prod-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .prod-desc-section h2 {
+        font-size: 28px;
+      }
+
+      .trust-icons-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .f-support {
+        grid-template-columns: 1fr;
+      }
+
+      .f-sup {
+        padding: 16px 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .f-sup:last-child {
+        border-bottom: none;
+      }
+
+      .ft-bar .container {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .ft-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 20px 0;
+      }
+
+      .ft-item:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — MOBILE
+    ══════════════════════════════════════ */
+    @media (max-width: 767px) {
+      .topbar {
+        display: none;
+      }
+
+      footer {
+        padding: 10px 0 0;
+      }
+
+      .container {
+        padding: 0 14px;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 200;
+      }
+
+      .hdr {
+        display: grid;
+        grid-template-columns: auto 1fr auto auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 0px;
+        padding: 10px 14px;
+      }
+
+      .logo {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: auto;
+        width: auto;
+        margin-left: 0;
+      }
+
+      .logo img {
+        width: 210px;
+        height: auto;
+        display: block;
+        margin-left: -18px;
+        margin-top: 0;
+      }
+
+      .nav-mobile-toggle {
+        display: flex;
+        grid-column: 4;
+        grid-row: 1;
+      }
+
+      .hdr-icons {
+        grid-column: 3;
+        grid-row: 1;
+        gap: 12px;
+      }
+
+      .icon-btn {
+        padding: 6px 8px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon-btn span:not(.cbadge) {
+        display: none;
+      }
+
+      .search-bar {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+      }
+
+      nav>.nav-inner {
+        display: none;
+      }
+
+      .nav-mobile-menu.open {
+        display: flex;
+      }
+
+      /* ── MAIN CONTENT — Mobile ── */
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .product-image-col {
+        position: static;
+      }
+
+      .main-image-wrap {
+        aspect-ratio: 1/1;
+        border-radius: 8px;
+      }
+
+      .img-placeholder {
+        min-height: 300px;
+      }
+
+      .thumb-strip {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+        gap: 8px;
+        scrollbar-width: none;
+        /* Firefox */
+      }
+
+      .thumb-strip::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Edge */
+      }
+
+      .thumb {
+        flex: 0 0 74px;
+        width: 74px;
+        height: 74px;
+      }
+
+      .thumb.active {
+        border-width: 2px;
+      }
+
+      .prod-title {
+        font-size: 20px !important;
+        margin-bottom: 12px;
+      }
+
+      .price-current {
+        font-size: 20px !important;
+      }
+
+      .price-box {
+        padding: 16px;
+        margin-bottom: 15px;
+      }
+
+      .cart-row {
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .btn-add-cart {
+        padding: 12px 14px;
+        font-size: 15px;
+      }
+
+      .btn-wish {
+        width: 48px;
+        height: 48px;
+      }
+
+      .benefits-box {
+        padding: 14px;
+        margin-bottom: 20px;
+      }
+
+      .benefit-text strong {
+        font-size: 13.5px;
+      }
+
+      .benefit-text span {
+        font-size: 12.5px;
+      }
+
+      .prod-desc-section h2 {
+        font-size: 24px !important;
+        margin-bottom: 10px;
+      }
+
+      .prod-desc-section p {
+        font-size: 14px;
+      }
+
+      .trust-icons-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .trust-col .t-ico {
+        font-size: 22px;
+      }
+
+      .trust-stats-row {
+        flex-direction: column;
+        gap: 14px;
+        padding-top: 14px;
+      }
+
+      .ts-item {
+        padding: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 14px;
+      }
+
+      .ts-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      /* Footer */
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-bottom: 28px;
+      }
+
+      .f-brand .logo img {
+        margin-left: 6px;
+      }
+
+      .f-support {
+        grid-template-columns: 1fr;
+      }
+
+      .f-sup {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 14px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ══════════════════════════════════════
+       TOP BAR
+  ══════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-l">
+        <a href="#"><i class="fa-solid fa-phone"></i> 0176 82598004</a>
+        <a href="#"><i class="fa-solid fa-envelope"></i> info@watchroom24.com</a>
+      </div>
+      <div class="topbar-r">
+        <a href="#"><i class="fa-solid fa-truck-fast"></i> Free shipping from
+          €50</a>
+        <div class="tdiv"></div>
+        <a href="#" class="gold-link"><i class="fa-solid fa-earth-europe"></i> Germany</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header>
+    <div class="hdr">
+      <div class="logo">
+        <a href="/"><img src="https://i.postimg.cc/QMrV2cTK/Logo-Black-PNG.png" alt="Watchroom24" /></a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for brands, models..." />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <div class="hdr-icons">
+        <button class="icon-btn">
+          <i class="fa-regular fa-user"></i>
+          <span>Account</span>
+        </button>
+        <button class="icon-btn">
+          <i class="fa-regular fa-heart"></i>
+          <span>Wishlist</span>
+        </button>
+        <button class="icon-btn" style="position: relative">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cbadge">0</span>
+          <span>Cart</span>
+        </button>
+      </div>
+      <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Open navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       MOBILE NAV MENU
+  ══════════════════════════════════════ -->
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <!-- LADIES -->
+    <div class="nav-mobile-item">
+      <div class="nav-mobile-item-header">
+        <a href="/womens-watches">LADIES</a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="nav-mobile-sub">
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/bags">Bags</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/bags">Handbags</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/glasses">Eyeglasses</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/glasses">Frame</a><a href="/glasses">Sunglasses</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/jewelry">Jewellery</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/jewelry">Keyrings</a><a href="/jewelry">Bracelets</a>
+            <a href="/jewelry">Charms &amp; Beads</a><a href="/jewelry">Earrings</a><a href="/jewelry">Necklaces</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/womens-watches">Watches</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/womens-watches">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MEN -->
+    <div class="nav-mobile-item">
+      <div class="nav-mobile-item-header">
+        <a href="/mens-watches">MEN</a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="nav-mobile-sub">
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/bags">Bags</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/bags">Sports Bags</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/clothings">Clothing</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/clothings">Pullover</a><a href="/clothings">Scarves and Shawls</a>
+            <a href="/clothings">Shorts</a><a href="/clothings">T-Shirt</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/glasses">Eyeglasses</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/glasses">Frame</a><a href="/glasses">Sunglasses</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/jewelry">Jewellery</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/jewelry">Bracelets</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/mens-watches">Watches</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/mens-watches">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- KIDS -->
+    <div class="nav-mobile-item">
+      <div class="nav-mobile-item-header">
+        <a href="/kids">KIDS</a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="nav-mobile-sub">
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/glasses">Eyeglasses</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/glasses">Sunglasses</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group">
+          <div class="nav-mobile-group-header">
+            <span><a href="/kids">Watches</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links">
+            <a href="/kids">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION (DESKTOP)
+  ══════════════════════════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-item">
+        <a href="/womens-watches">Ladies</a>
+        <div class="mega-drop">
+          <div class="mega-drop-col">
+            <a href="/bags">Bags</a><a href="/bags">Handbags</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/glasses">Eyeglasses</a><a href="/glasses">Frame</a><a href="/glasses">Sunglasses</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/jewelry">Jewellery</a>
+            <a href="/jewelry">Keyrings</a><a href="/jewelry">Bracelets</a>
+            <a href="/jewelry">Charms &amp; Beads</a><a href="/jewelry">Earrings</a><a href="/jewelry">Necklaces</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/womens-watches">Watches</a><a href="/womens-watches">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/mens-watches">MEN</a>
+        <div class="mega-drop">
+          <div class="mega-drop-col">
+            <a href="/bags">Bags</a><a href="/bags">Sports Bags</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/clothings">Clothing</a>
+            <a href="/clothings">Pullover</a><a href="/clothings">Scarves and Shawls</a>
+            <a href="/clothings">Shorts</a><a href="/clothings">T-Shirt</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/glasses">Eyeglasses</a><a href="/glasses">Frame</a><a href="/glasses">Sunglasses</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/jewelry">Jewellery</a><a href="/jewelry">Bracelets</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/mens-watches">Watches</a><a href="/mens-watches">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/kids">KIDS</a>
+        <div class="mega-drop">
+          <div class="mega-drop-col">
+            <a href="/glasses">Eyeglasses</a><a href="/glasses">Sunglasses</a>
+          </div>
+          <div class="mega-drop-col">
+            <a href="/kids">Watches</a><a href="/kids">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════ -->
+  <div class="container">
+    <div class="back-bar">
+      <a href="#" class="back-link">
+        <i class="fa-solid fa-chevron-left"></i> Wristwatches
+      </a>
+    </div>
+
+    <section class="product-section">
+      <div class="product-layout">
+        <!-- ── LEFT: IMAGE ── -->
+        <div class="product-image-col">
+          <div class="main-image-wrap">
+            <div class="img-placeholder">
+              <img src="https://i.postimg.cc/rm4812LQ/bjky8kmpwnrmw0cx20j89z05km-preview-0-ezremove.png" alt=""
+                loading="lazy" />
+            </div>
+            <span class="img-sale-badge">-28% OFF</span>
+          </div>
+          <div class="thumb-strip">
+            <div class="thumb active">
+              <img src="https://i.postimg.cc/rm4812LQ/bjky8kmpwnrmw0cx20j89z05km-preview-0-ezremove.png" alt=""
+                loading="lazy" />
+            </div>
+            <div class="thumb">
+              <img src="https://i.postimg.cc/L8hFkFtD/gtbvzpkbbsrmt0cx20ka4xfgbc-preview-0-ezremove.png" alt=""
+                loading="lazy" />
+            </div>
+            <div class="thumb">
+              <img
+                src="https://i.postimg.cc/Cx9XjBLx/Versace-Schweizer-Uhr-Palazzo-Empire-Greca-VEDV00419-VEDV00719-2-1200x1200-jpg.avif"
+                alt="" loading="lazy" />
+            </div>
+            <div class="thumb">
+              <img
+                src="https://i.postimg.cc/wTvGZc1g/Versace-Schweizer-Uhr-Palazzo-Empire-Greca-VEDV00419-Versace-Damenuhr-Palazzo-Empire-Silber-Edelstah.avif"
+                alt="" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ── RIGHT: INFO ── -->
+        <div class="product-info-col">
+          <span class="prod-brand-label">Versace</span>
+          <h1 class="prod-title">
+            Women's Watch Palazzo Empire Silver Stainless Steel Case 39mm
+            VCO090017
+          </h1>
+
+          <div class="rating-row">
+            <span class="stars-lg">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="rating-score">4.7</span>
+            <span class="rating-count">(412 Reviews)</span>
+          </div>
+
+          <p class="prod-tagline">
+            Instagram favorite in minimalist design
+          </p>
+
+          <div class="price-box">
+            <div class="price-main-row">
+              <span class="price-current">599.00 €</span>
+              <span class="price-old">1140.00 €</span>
+            </div>
+            <div class="price-saving">
+              <i class="fa-solid fa-tag"></i> Save €50.00
+            </div>
+            <p class="price-tax">
+              Incl. VAT plus <a href="#">shipping costs</a>
+            </p>
+          </div>
+
+          <div class="cart-row">
+            <button class="btn-add-cart">
+              <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+            <button class="btn-wish">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+
+          <div class="benefits-box">
+            <div class="benefits-title">
+              <i class="fa-solid fa-shield-halved"></i> Your Benefits
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon green">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div class="benefit-text">
+                <strong>Free shipping on orders over €100</strong>
+                <span>Express shipping available</span>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon blue">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div class="benefit-text">
+                <strong>Secure and flexible payment</strong>
+                <span>Reliably traceable</span>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon orange">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="benefit-text">
+                <strong>Customer Service</strong>
+                <span>info@watchroom24.com</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="prod-desc-section">
+            <h2>Product Description</h2>
+            <p>
+              The silver stainless steel band and case surely makes this watch
+              an eye-catcher. The white dial contains one analog display
+              without numbers and with the silver Versace logo embedded at the
+              center. The stainless steel band has a folding clasp buckle with
+              which the women's watch can be adapted to the wrist without
+              effort and individually tailored.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust card -->
+    <div class="trust-section">
+      <div class="trust-card">
+        <div class="trust-icons-row">
+          <div class="trust-col">
+            <div class="t-ico"><i class="fa-solid fa-shield-halved"></i></div>
+            <strong>Buyer Protection</strong><span>100% secure</span>
+          </div>
+          <div class="trust-col">
+            <div class="t-ico"><i class="fa-solid fa-truck-fast"></i></div>
+            <strong>Free Shipping</strong><span>from €50</span>
+          </div>
+          <div class="trust-col">
+            <div class="t-ico"><i class="fa-solid fa-rotate-left"></i></div>
+            <strong>30-Day Returns</strong><span>free of charge</span>
+          </div>
+          <div class="trust-col">
+            <div class="t-ico"><i class="fa-solid fa-circle-check"></i></div>
+            <strong>Original & Guarantee</strong><span>2 years</span>
+          </div>
+          <div class="trust-col">
+            <div class="t-ico"><i class="fa-solid fa-lock"></i></div>
+            <strong>Secure Payment</strong><span>SSL encrypted</span>
+          </div>
+          <div class="trust-col">
+            <div class="t-ico"><i class="fa-solid fa-headset"></i></div>
+            <strong>Customer Support</strong><span>Mon–Fri 9AM–6PM</span>
+          </div>
+        </div>
+        <div class="trust-stats-row">
+          <div class="ts-item">
+            <div class="num"><i class="fa-solid fa-star"></i> 4.8 / 5</div>
+            <div class="lbl">on Trusted Shops</div>
+          </div>
+          <div class="ts-item">
+            <div class="num">Over 15,000</div>
+            <div class="lbl">satisfied customers</div>
+          </div>
+          <div class="ts-item">
+            <div class="num">since 2010</div>
+            <div class="lbl">Your expert</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="f-brand">
+          <div class="logo">
+            <img src="https://i.postimg.cc/T3sJg7Bv/Chat-GPT-Image-Mar-18-2026-11-09-26-AM-copy.png"
+              alt="Watchroom24" />
+          </div>
+          <p>
+            Your specialist for exclusive watches, exquisite jewelry and bags.
+            Since 2010, customers from over 50 countries have trusted us for
+            quality and style.
+          </p>
+          <div class="socials">
+            <div class="soc"><i class="fa-brands fa-facebook-f"></i></div>
+            <div class="soc"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="soc"><i class="fa-brands fa-instagram"></i></div>
+            <div class="soc"><i class="fa-brands fa-youtube"></i></div>
+          </div>
+          <div class="f-contact">
+            <div class="f-ci">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Musterstraße 123, 12345 Berlin, DE</span>
+            </div>
+          </div>
+        </div>
+        <div class="f-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="/womens-watches">Women's Watches</a></li>
+            <li><a href="/mens-watches">Men's Watches</a></li>
+            <li><a href="/jewelry">Jewelry</a></li>
+            <li><a href="/glasses">Eyewear</a></li>
+            <li><a href="/bags">Bags</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <ul>
+            <li><a href="/rightofwithdrawal">Right of Withdrawal</a></li>
+            <li><a href="/withdrawalform">Cancellation Form</a></li>
+            <li><a href="/impressum">Imprint</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <ul>
+            <li><a href="/privacypolicy">Privacy Policy</a></li>
+            <li><a href="/conditions">Terms & Conditions</a></li>
+            <li><a href="/contacts">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="f-support">
+        <div class="f-sup">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Phone Support</strong><span>0030 12345890034</span>
+          </div>
+        </div>
+        <div class="f-sup">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>E-Mail Support</strong><span><a href="mailto:info@watchroom24.com">info@watchroom24.com</a></span>
+          </div>
+        </div>
+        <div class="f-sup">
+          <i class="fa-solid fa-building"></i>
+          <div>
+            <strong>Business Hours</strong><span>Mon–Fri: 9:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="f-bottom">
+        <p>© 2026 Watchroom24. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════ -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      /* Active nav link */
+      const links = document.querySelectorAll(".nav-inner a");
+      const currentPath = window.location.pathname;
+      links.forEach((link) => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === currentPath,
+        );
+      });
+
+      /* Mobile hamburger toggle */
+      const navToggle = document.getElementById("navMobileToggle");
+      const navMenu = document.getElementById("navMobileMenu");
+      if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = navMenu.classList.toggle("open");
+          navToggle.querySelector("i").className = isOpen
+            ? "fa-solid fa-xmark"
+            : "fa-solid fa-bars";
+        });
+      }
+
+      /* Mobile top-level accordion */
+      document
+        .querySelectorAll(".nav-mobile-item-header")
+        .forEach((header) => {
+          header.addEventListener("click", () => {
+            const item = header.parentElement;
+            document.querySelectorAll(".nav-mobile-item").forEach((i) => {
+              if (i !== item) i.classList.remove("open");
+            });
+            item.classList.toggle("open");
+          });
+        });
+
+      /* Mobile nested group accordion */
+      document
+        .querySelectorAll(".nav-mobile-group-header")
+        .forEach((header) => {
+          header.addEventListener("click", (e) => {
+            e.stopPropagation();
+            header.parentElement.classList.toggle("open");
+          });
+        });
+
+      /* Close mobile nav on resize */
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 1200 && navMenu) {
+          navMenu.classList.remove("open");
+          if (navToggle)
+            navToggle.querySelector("i").className = "fa-solid fa-bars";
+        }
+      });
+
+      /* Thumbnail gallery */
+      const thumbs = document.querySelectorAll(".thumb");
+      const mainImage = document.querySelector(".main-image-wrap img");
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", function () {
+          thumbs.forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+          const imgSrc = this.querySelector("img").src;
+          if (mainImage) {
+            mainImage.style.opacity = "0";
+            setTimeout(() => {
+              mainImage.src = imgSrc;
+              mainImage.style.opacity = "1";
+            }, 200);
+          }
+        });
+      });
+
+      /* Wishlist heart toggle */
+      document.querySelectorAll(".btn-wish").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const icon = this.querySelector("i");
+          if (icon.classList.contains("fa-regular")) {
+            icon.classList.replace("fa-regular", "fa-solid");
+            this.style.color = "var(--red)";
+          } else {
+            icon.classList.replace("fa-solid", "fa-regular");
+            this.style.color = "";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
