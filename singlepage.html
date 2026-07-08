@@ -1980,94 +1980,159 @@
        JAVASCRIPT
   ══════════════════════════════════════ -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      /* Active nav link */
-      const links = document.querySelectorAll(".nav-inner a");
-      const currentPath = window.location.pathname;
-      links.forEach((link) => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === currentPath,
-        );
-      });
+(function () {
+  // ── juno handler hoy to pehla kaadho (duplicate/gaayब banne atkave) ──
+  if (window.__whr24Click) document.removeEventListener("click", window.__whr24Click);
+  if (window.__whr24Resize) window.removeEventListener("resize", window.__whr24Resize);
+  if (window.__whr24Key) document.removeEventListener("keydown", window.__whr24Key);
 
-      /* Mobile hamburger toggle */
-      const navToggle = document.getElementById("navMobileToggle");
-      const navMenu = document.getElementById("navMobileMenu");
-      if (navToggle && navMenu) {
-        navToggle.addEventListener("click", () => {
-          const isOpen = navMenu.classList.toggle("open");
-          navToggle.querySelector("i").className = isOpen
-            ? "fa-solid fa-xmark"
-            : "fa-solid fa-bars";
-        });
+  // ── CLICK: badhu event delegation thi (SPA re-render pachi pan chale) ──
+  window.__whr24Click = function (e) {
+
+    // 1. filter drawer kholo (mobile/tablet)
+        // 1. filter drawer kholo (mobile/tablet)
+    if (e.target.closest("#openFilterDrawer")) {
+      const body = document.getElementById("filterDrawerBody");
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      const sidebar = document.querySelector(".filter-sidebar");
+      if (body && sidebar) {
+        body.innerHTML = sidebar.innerHTML;            // dar vખते taazu clone
+        body.querySelectorAll(".filter-acc-item").forEach(i => i.classList.add("open")); // badha section khullа
+        body.querySelectorAll(".cat-group").forEach(g => g.classList.add("open"));       // category tree pan khullу
       }
+      if (overlay && drawer) {
+        overlay.classList.add("open");
+        drawer.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      return;
+    }
 
-      /* Mobile top-level accordion */
-      document
-        .querySelectorAll(".nav-mobile-item-header")
-        .forEach((header) => {
-          header.addEventListener("click", () => {
-            const item = header.parentElement;
-            document.querySelectorAll(".nav-mobile-item").forEach((i) => {
-              if (i !== item) i.classList.remove("open");
-            });
-            item.classList.toggle("open");
-          });
-        });
+    // 2. filter drawer band karo (close / overlay / apply)
+    if (e.target.closest("#closeFilterDrawer") || e.target.closest("#filterOverlay") || e.target.closest("#applyFilters")) {
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      if (overlay && drawer) {
+        overlay.classList.remove("open");
+        drawer.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      return;
+    }
 
-      /* Mobile nested group accordion */
-      document
-        .querySelectorAll(".nav-mobile-group-header")
-        .forEach((header) => {
-          header.addEventListener("click", (e) => {
-            e.stopPropagation();
-            header.parentElement.classList.toggle("open");
-          });
-        });
+    // 3. reset filters (drawer ni andar)
+    if (e.target.closest("#resetFilters")) {
+      const body = document.getElementById("filterDrawerBody");
+      if (body) {
+        body.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+        body.querySelectorAll("input[type=range]").forEach(r => r.value = r.max);
+      }
+      return;
+    }
 
-      /* Close mobile nav on resize */
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 1200 && navMenu) {
-          navMenu.classList.remove("open");
-          if (navToggle)
-            navToggle.querySelector("i").className = "fa-solid fa-bars";
-        }
-      });
+    // 4. sidebar filter accordion (Categories, Manufacturer, vગેરે)
+    //    NOTE: drawer ni andar clone thayel content ma pan aa j class chhe, etle બંને jagya chale
+    const filterHeader = e.target.closest(".filter-acc-header");
+    if (filterHeader) {
+      filterHeader.parentElement.classList.toggle("open");
+      return;
+    }
 
-      /* Thumbnail gallery */
-      const thumbs = document.querySelectorAll(".thumb");
-      const mainImage = document.querySelector(".main-image-wrap img");
-      thumbs.forEach((thumb) => {
-        thumb.addEventListener("click", function () {
-          thumbs.forEach((t) => t.classList.remove("active"));
-          this.classList.add("active");
-          const imgSrc = this.querySelector("img").src;
-          if (mainImage) {
-            mainImage.style.opacity = "0";
-            setTimeout(() => {
-              mainImage.src = imgSrc;
-              mainImage.style.opacity = "1";
-            }, 200);
-          }
-        });
-      });
+    // 5. sidebar nested category (LADIES / MEN / KIDS tree)
+    const mainCatHeader = e.target.closest(".main-cat-header");
+    if (mainCatHeader) {
+      mainCatHeader.parentElement.classList.toggle("open");
+      return;
+    }
 
-      /* Wishlist heart toggle */
-      document.querySelectorAll(".btn-wish").forEach((btn) => {
-        btn.addEventListener("click", function () {
-          const icon = this.querySelector("i");
-          if (icon.classList.contains("fa-regular")) {
-            icon.classList.replace("fa-regular", "fa-solid");
-            this.style.color = "var(--red)";
-          } else {
-            icon.classList.replace("fa-solid", "fa-regular");
-            this.style.color = "";
-          }
-        });
-      });
-    });
-  </script>
+    // 6. hamburger toggle
+    const navToggle = e.target.closest("#navMobileToggle");
+    if (navToggle) {
+      const menu = document.getElementById("navMobileMenu");
+      if (menu) {
+        const open = menu.classList.toggle("open");
+        const icon = navToggle.querySelector("i");
+        if (icon) icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+      }
+      return;
+    }
+
+    // 7. mobile nav top-level accordion
+    const mobileHeader = e.target.closest(".nav-mobile-item-header");
+    if (mobileHeader) {
+      const item = mobileHeader.parentElement;
+      document.querySelectorAll(".nav-mobile-item").forEach(i => { if (i !== item) i.classList.remove("open"); });
+      item.classList.toggle("open");
+      return;
+    }
+
+    // 8. mobile nav nested group
+    const groupHeader = e.target.closest(".nav-mobile-group-header");
+    if (groupHeader) {
+      e.stopPropagation();
+      groupHeader.parentElement.classList.toggle("open");
+      return;
+    }
+
+    // 9. wishlist heart (card ni navigation pehla check karvu)
+    const wishBtn = e.target.closest(".pwish, .prod-wish, .btn-wish");
+    if (wishBtn) {
+      e.stopPropagation();
+      const icon = wishBtn.querySelector("i");
+      if (icon) {
+        if (icon.classList.contains("fa-regular")) { icon.classList.replace("fa-regular", "fa-solid"); wishBtn.style.color = "var(--red)"; }
+        else { icon.classList.replace("fa-solid", "fa-regular"); wishBtn.style.color = ""; }
+      }
+      return;
+    }
+
+    // 10. thumbnail gallery (singlepage)
+    const thumb = e.target.closest(".thumb");
+    if (thumb) {
+      document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
+      thumb.classList.add("active");
+      const src = thumb.querySelector("img") && thumb.querySelector("img").src;
+      const main = document.querySelector(".main-image-wrap img");
+      if (src && main) { main.style.opacity = "0"; setTimeout(() => { main.src = src; main.style.opacity = "1"; }, 200); }
+      return;
+    }
+
+    // 11. product card -> singlepage (Add to Cart / wishlist pr click hoy to nહੀ)
+    const card = e.target.closest(".prod-card");
+    if (card && !e.target.closest(".btn-cart")) {
+      window.location.href = "/singlepage";
+      return;
+    }
+  };
+  document.addEventListener("click", window.__whr24Click);
+
+  // ── ESC thi filter drawer band ──
+  window.__whr24Key = function (e) {
+    if (e.key === "Escape") {
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      if (overlay && drawer) {
+        overlay.classList.remove("open");
+        drawer.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    }
+  };
+  document.addEventListener("keydown", window.__whr24Key);
+
+  // ── resize pr mobile menu band ──
+  window.__whr24Resize = function () {
+    if (window.innerWidth >= 1200) {
+      const menu = document.getElementById("navMobileMenu");
+      const toggle = document.getElementById("navMobileToggle");
+      if (menu) menu.classList.remove("open");
+      if (toggle) { const i = toggle.querySelector("i"); if (i) i.className = "fa-solid fa-bars"; }
+    }
+  };
+  window.addEventListener("resize", window.__whr24Resize);
+})();
+</script>
 </body>
 
 </html>

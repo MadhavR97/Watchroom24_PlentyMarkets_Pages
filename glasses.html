@@ -3740,210 +3740,160 @@
       data-cfasync="false"
       src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
     ></script>
+
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        /* ── Active nav link ── */
-        const links = document.querySelectorAll(".nav-inner a");
-        const currentPath = window.location.pathname;
-        links.forEach((link) => {
-          if (link.getAttribute("href") === currentPath)
-            link.classList.add("active");
-          else link.classList.remove("active");
-        });
+(function () {
+  // ── juno handler hoy to pehla kaadho (duplicate/gaayब banne atkave) ──
+  if (window.__whr24Click) document.removeEventListener("click", window.__whr24Click);
+  if (window.__whr24Resize) window.removeEventListener("resize", window.__whr24Resize);
+  if (window.__whr24Key) document.removeEventListener("keydown", window.__whr24Key);
 
-        /* ── Filter Accordion Toggle (sidebar) ── */
-        document.querySelectorAll(".filter-acc-header").forEach((header) => {
-          header.addEventListener("click", () => {
-            header.parentElement.classList.toggle("open");
-          });
-        });
+  // ── CLICK: badhu event delegation thi (SPA re-render pachi pan chale) ──
+  window.__whr24Click = function (e) {
 
-        /* ── Nested Category Dropdowns Toggle (sidebar) ── */
-        document.querySelectorAll(".main-cat-header").forEach((header) => {
-          header.addEventListener("click", () => {
-            header.parentElement.classList.toggle("open");
-          });
-        });
+    // 1. filter drawer kholo (mobile/tablet)
+        // 1. filter drawer kholo (mobile/tablet)
+    if (e.target.closest("#openFilterDrawer")) {
+      const body = document.getElementById("filterDrawerBody");
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      const sidebar = document.querySelector(".filter-sidebar");
+      if (body && sidebar) {
+        body.innerHTML = sidebar.innerHTML;            // dar vખते taazu clone
+        body.querySelectorAll(".filter-acc-item").forEach(i => i.classList.add("open")); // badha section khullа
+        body.querySelectorAll(".cat-group").forEach(g => g.classList.add("open"));       // category tree pan khullу
+      }
+      if (overlay && drawer) {
+        overlay.classList.add("open");
+        drawer.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      return;
+    }
 
-        /* ─────────────────────────────────────────
-       MOBILE FILTER DRAWER
-    ───────────────────────────────────────── */
-        const openBtn = document.getElementById("openFilterDrawer");
-        const closeBtn = document.getElementById("closeFilterDrawer");
-        const overlay = document.getElementById("filterOverlay");
-        const drawer = document.getElementById("filterDrawer");
-        const drawerBody = document.getElementById("filterDrawerBody");
-        const applyBtn = document.getElementById("applyFilters");
-        const resetBtn = document.getElementById("resetFilters");
+    // 2. filter drawer band karo (close / overlay / apply)
+    if (e.target.closest("#closeFilterDrawer") || e.target.closest("#filterOverlay") || e.target.closest("#applyFilters")) {
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      if (overlay && drawer) {
+        overlay.classList.remove("open");
+        drawer.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      return;
+    }
 
-        function openDrawer() {
-          // Clone sidebar content into drawer if empty
-          if (!drawerBody.hasChildNodes() || drawerBody.children.length === 0) {
-            const sidebar = document.querySelector(".filter-sidebar");
-            if (sidebar) {
-              drawerBody.innerHTML = sidebar.innerHTML;
-              // Re-attach accordion events inside drawer
-              drawerBody.querySelectorAll(".filter-acc-header").forEach((h) => {
-                h.addEventListener("click", () =>
-                  h.parentElement.classList.toggle("open"),
-                );
-              });
-              drawerBody.querySelectorAll(".main-cat-header").forEach((h) => {
-                h.addEventListener("click", () =>
-                  h.parentElement.classList.toggle("open"),
-                );
-              });
-            }
-          }
-          overlay.classList.add("open");
-          drawer.classList.add("open");
-          document.body.style.overflow = "hidden";
-        }
+    // 3. reset filters (drawer ni andar)
+    if (e.target.closest("#resetFilters")) {
+      const body = document.getElementById("filterDrawerBody");
+      if (body) {
+        body.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+        body.querySelectorAll("input[type=range]").forEach(r => r.value = r.max);
+      }
+      return;
+    }
 
-        function closeDrawer() {
-          overlay.classList.remove("open");
-          drawer.classList.remove("open");
-          document.body.style.overflow = "";
-        }
+    // 4. sidebar filter accordion (Categories, Manufacturer, vગેરે)
+    //    NOTE: drawer ni andar clone thayel content ma pan aa j class chhe, etle બંને jagya chale
+    const filterHeader = e.target.closest(".filter-acc-header");
+    if (filterHeader) {
+      filterHeader.parentElement.classList.toggle("open");
+      return;
+    }
 
-        if (openBtn) openBtn.addEventListener("click", openDrawer);
-        if (closeBtn) closeBtn.addEventListener("click", closeDrawer);
-        if (overlay) overlay.addEventListener("click", closeDrawer);
-        if (applyBtn) applyBtn.addEventListener("click", closeDrawer);
-        if (resetBtn)
-          resetBtn.addEventListener("click", () => {
-            drawerBody
-              .querySelectorAll("input[type=checkbox]")
-              .forEach((cb) => (cb.checked = false));
-            drawerBody
-              .querySelectorAll("input[type=range]")
-              .forEach((r) => (r.value = r.max));
-          });
+    // 5. sidebar nested category (LADIES / MEN / KIDS tree)
+    const mainCatHeader = e.target.closest(".main-cat-header");
+    if (mainCatHeader) {
+      mainCatHeader.parentElement.classList.toggle("open");
+      return;
+    }
 
-        /* ─────────────────────────────────────────
-       MOBILE NAV MENU
-    ───────────────────────────────────────── */
-        const navToggle = document.getElementById("navMobileToggle");
-        const navMenu = document.getElementById("navMobileMenu");
+    // 6. hamburger toggle
+    const navToggle = e.target.closest("#navMobileToggle");
+    if (navToggle) {
+      const menu = document.getElementById("navMobileMenu");
+      if (menu) {
+        const open = menu.classList.toggle("open");
+        const icon = navToggle.querySelector("i");
+        if (icon) icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+      }
+      return;
+    }
 
-        if (navToggle && navMenu) {
-          navToggle.addEventListener("click", () => {
-            const isOpen = navMenu.classList.toggle("open");
-            navToggle.querySelector("i").className = isOpen
-              ? "fa-solid fa-xmark"
-              : "fa-solid fa-bars";
-          });
-        }
+    // 7. mobile nav top-level accordion
+    const mobileHeader = e.target.closest(".nav-mobile-item-header");
+    if (mobileHeader) {
+      const item = mobileHeader.parentElement;
+      document.querySelectorAll(".nav-mobile-item").forEach(i => { if (i !== item) i.classList.remove("open"); });
+      item.classList.toggle("open");
+      return;
+    }
 
-        // Mobile nav sub-accordion
-        document
-          .querySelectorAll(".nav-mobile-item-header")
-          .forEach((header) => {
-            header.addEventListener("click", () => {
-              const item = header.parentElement;
-              // Close siblings
-              document.querySelectorAll(".nav-mobile-item").forEach((i) => {
-                if (i !== item) i.classList.remove("open");
-              });
-              item.classList.toggle("open");
-            });
-          });
+    // 8. mobile nav nested group
+    const groupHeader = e.target.closest(".nav-mobile-group-header");
+    if (groupHeader) {
+      e.stopPropagation();
+      groupHeader.parentElement.classList.toggle("open");
+      return;
+    }
 
-        // Mobile nav nested group accordion (category → sub-items)
-        document
-          .querySelectorAll(".nav-mobile-group-header")
-          .forEach((header) => {
-            header.addEventListener("click", (e) => {
-              e.stopPropagation();
-              const group = header.parentElement;
-              group.classList.toggle("open");
-            });
-          });
+    // 9. wishlist heart (card ni navigation pehla check karvu)
+    const wishBtn = e.target.closest(".pwish, .prod-wish, .btn-wish");
+    if (wishBtn) {
+      e.stopPropagation();
+      const icon = wishBtn.querySelector("i");
+      if (icon) {
+        if (icon.classList.contains("fa-regular")) { icon.classList.replace("fa-regular", "fa-solid"); wishBtn.style.color = "var(--red)"; }
+        else { icon.classList.replace("fa-solid", "fa-regular"); wishBtn.style.color = ""; }
+      }
+      return;
+    }
 
-        /* Close mobile nav when resizing to desktop */
-        window.addEventListener("resize", () => {
-          if (window.innerWidth >= 1200 && navMenu) {
-            navMenu.classList.remove("open");
-            if (navToggle)
-              navToggle.querySelector("i").className = "fa-solid fa-bars";
-          }
-          if (window.innerWidth >= 1200) closeDrawer();
-        });
+    // 10. thumbnail gallery (singlepage)
+    const thumb = e.target.closest(".thumb");
+    if (thumb) {
+      document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
+      thumb.classList.add("active");
+      const src = thumb.querySelector("img") && thumb.querySelector("img").src;
+      const main = document.querySelector(".main-image-wrap img");
+      if (src && main) { main.style.opacity = "0"; setTimeout(() => { main.src = src; main.style.opacity = "1"; }, 200); }
+      return;
+    }
 
-        /* ─────────────────────────────────────────
-       LAZY-LOAD IMAGES (IntersectionObserver)
-    ───────────────────────────────────────── */
-        const lazyImgs = document.querySelectorAll('img[loading="lazy"]');
-        if ("IntersectionObserver" in window) {
-          const observer = new IntersectionObserver(
-            (entries, obs) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  const img = entry.target;
-                  img.classList.add("loaded");
-                  obs.unobserve(img);
-                }
-              });
-            },
-            { rootMargin: "100px" },
-          );
-          lazyImgs.forEach((img) => {
-            img.style.opacity = "0";
-            img.style.transition = "opacity 0.4s";
-            img.addEventListener("load", () => img.classList.add("loaded"));
-            img.addEventListener("error", () => img.classList.add("loaded")); // fail silently
-            observer.observe(img);
-          });
-        } else {
-          // Fallback: just show all images
-          lazyImgs.forEach((img) => (img.style.opacity = "1"));
-        }
+    // 11. product card -> singlepage (Add to Cart / wishlist pr click hoy to nહੀ)
+    const card = e.target.closest(".prod-card");
+    if (card && !e.target.closest(".btn-cart")) {
+      window.location.href = "/singlepage";
+      return;
+    }
+  };
+  document.addEventListener("click", window.__whr24Click);
 
-        /* Trigger loaded state for already-cached images */
-        lazyImgs.forEach((img) => {
-          if (img.complete) {
-            img.style.opacity = "1";
-            img.classList.add("loaded");
-          }
-        });
+  // ── ESC thi filter drawer band ──
+  window.__whr24Key = function (e) {
+    if (e.key === "Escape") {
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      if (overlay && drawer) {
+        overlay.classList.remove("open");
+        drawer.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    }
+  };
+  document.addEventListener("keydown", window.__whr24Key);
 
-        /* ─────────────────────────────────────────
-       WISHLIST HEART TOGGLE
-    ───────────────────────────────────────── */
-        document.querySelectorAll(".prod-wish").forEach((btn) => {
-          btn.addEventListener("click", function () {
-            const icon = this.querySelector("i");
-            if (icon.classList.contains("fa-regular")) {
-              icon.classList.replace("fa-regular", "fa-solid");
-              this.style.color = "var(--red)";
-            } else {
-              icon.classList.replace("fa-solid", "fa-regular");
-              this.style.color = "";
-            }
-          });
-        });
-        /* ─────────────────────────────────────────
-       SPECIALIZED HANDLERS (Product Redirect & Cart)
-    ───────────────────────────────────────── */
-        document.querySelectorAll(".prod-card").forEach((card) => {
-          card.addEventListener("click", () => {
-            window.location.href = "/singlepage";
-          });
-        });
-
-        document.querySelectorAll(".btn-cart").forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-        });
-
-        /* ─────────────────────────────────────────
-       KEYBOARD: Close drawer on ESC
-    ───────────────────────────────────────── */
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") closeDrawer();
-        });
-      });
-    </script>
+  // ── resize pr mobile menu band ──
+  window.__whr24Resize = function () {
+    if (window.innerWidth >= 1200) {
+      const menu = document.getElementById("navMobileMenu");
+      const toggle = document.getElementById("navMobileToggle");
+      if (menu) menu.classList.remove("open");
+      if (toggle) { const i = toggle.querySelector("i"); if (i) i.className = "fa-solid fa-bars"; }
+    }
+  };
+  window.addEventListener("resize", window.__whr24Resize);
+})();
+</script>
   </body>
 </html>
