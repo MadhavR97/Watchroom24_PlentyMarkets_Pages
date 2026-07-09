@@ -4919,6 +4919,111 @@
     }
   };
   window.addEventListener("resize", window.__whr24Resize);
+
+  // ── REVIEW SLIDER ──
+  (function () {
+    const track = document.getElementById("reviewTrack");
+    const dotsContainer = document.getElementById("sliderDots");
+    if (!track || !dotsContainer) return;
+
+    const cards = Array.from(track.children);
+    if (!cards.length) return;
+
+    let currentIndex = 0;
+    let autoSlide;
+
+    function getCardsPerView() {
+      const windowW = window.innerWidth;
+      if (windowW < 768) return 1;
+      if (windowW < 1024) return 2;
+      return 3;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, cards.length - getCardsPerView());
+    }
+
+    function buildDots() {
+      dotsContainer.innerHTML = "";
+      const total = getMaxIndex() + 1;
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement("span");
+        dot.className = "w24-nav-dot" + (i === currentIndex ? " active" : "");
+        dot.dataset.index = i;
+        dot.addEventListener("click", function () { goTo(parseInt(this.dataset.index)); });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function goTo(index) {
+      const max = getMaxIndex();
+      currentIndex = Math.min(Math.max(0, index), max);
+      const cardsPerView = getCardsPerView();
+      let translateX = 0;
+      for (let i = 0; i < currentIndex; i++) {
+        translateX += cards[i].offsetWidth + 24;
+      }
+      track.style.transform = "translateX(-" + translateX + "px)";
+      Array.from(dotsContainer.children).forEach(function (d, i) {
+        d.classList.toggle("active", i === currentIndex);
+      });
+      resetAutoSlide();
+    }
+
+    function next() { goTo(currentIndex + 1); }
+    function prev() { goTo(currentIndex - 1); }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(next, 4000);
+    }
+
+    // ── touch / drag ──
+    (function () {
+      let startX = 0, startY = 0, isDragging = false, movedX = 0, isSwiping = false;
+      track.addEventListener("mousedown", function (e) {
+        startX = e.clientX; startY = e.clientY; isDragging = true; movedX = 0; isSwiping = false;
+        track.style.cursor = "grabbing";
+      });
+      document.addEventListener("mousemove", function (e) {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        if (!isSwiping && Math.abs(dx) > 10) isSwiping = true;
+        if (isSwiping) { movedX = dx; e.preventDefault(); }
+      });
+      document.addEventListener("mouseup", function () {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.cursor = "";
+        if (isSwiping) {
+          if (movedX < -50) next();
+          else if (movedX > 50) prev();
+        }
+      });
+      track.addEventListener("touchstart", function (e) {
+        startX = e.touches[0].clientX; startY = e.touches[0].clientY; movedX = 0; isSwiping = false;
+      });
+      track.addEventListener("touchmove", function (e) {
+        const dx = e.touches[0].clientX - startX;
+        if (!isSwiping && Math.abs(dx) > 10) isSwiping = true;
+        if (isSwiping) { movedX = dx; }
+      });
+      track.addEventListener("touchend", function () {
+        if (isSwiping) {
+          if (movedX < -50) next();
+          else if (movedX > 50) prev();
+        }
+      });
+    })();
+
+    buildDots();
+    resetAutoSlide();
+
+    window.addEventListener("resize", function () {
+      buildDots();
+      goTo(currentIndex);
+    });
+  })();
 })();
 </script>
 </body>
