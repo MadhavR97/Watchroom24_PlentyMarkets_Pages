@@ -1,0 +1,624 @@
+﻿<!DOCTYPE html><html lang="en" style="scroll-behavior:smooth"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watchroom24 â€“ Exclusive Luxury Watches &amp; Exquisite Jewelry</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style type="text/css">
+@keyframes slideDown{
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+@keyframes fadeUp{
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+:root{--navy:#0a1c36;--navy2:#0d2244;--gold:#ffb600;--gold-dark:#c4a962;--white:#ffffff;--bg-light:#f8f9fa;--text-dark:#212529;--text-light:#6c757d;--border:#e0e0e0;--red:#dc3545;--green:#198754;--font-display:"Inter";--font-body:"Inter";--font-mono:"Inter";--radius:6px;--shadow-sm:0 2px 8px rgba(10, 28, 54, 0.07);--shadow-md:0 6px 24px rgba(10, 28, 54, 0.12);--shadow-lg:0 16px 48px rgba(10, 28, 54, 0.18)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.btn-navy:hover{background:#0d2444;box-shadow:0 6px 24px rgba(10, 28, 54, 0.12)}
+.btn-ghost:hover{border-color:#0a1c36;color:#0a1c36}
+.topbar .container{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.topbar .container::before{content:"";display:block}
+.topbar a,.topbar span{font-family:"Inter";font-size:13px;font-weight:500;color:rgba(255, 255, 255, 0.55);transition:color 0.2s;display:flex;align-items:center;gap:8px;text-decoration:none}
+.topbar a:hover{color:#c4a962}
+.topbar .gold-link{color:#c4a962 !important;font-weight:600}
+.topbar i{font-size:14px}
+.topbar .india-dropdown{font-family:"Inter";cursor:pointer;display:flex;align-items:center;gap:5px;color:rgba(255, 255, 255, 0.55);justify-self:end;font-size:13px}
+.topbar .india-dropdown i:last-child{font-size:10px;margin-left:2px;color:rgba(255, 255, 255, 0.55)}
+.logo img{width:120%;height:100%;margin-top:10px}
+.logo span{color:#ffb600}
+.search-bar:focus-within{border-color:#ffb600;box-shadow:0 0 0 3px rgba(255, 182, 0, 0.12)}
+.search-bar input{flex:1;padding:11px 16px;border:none;outline:none;background:transparent;font-family:"Inter";font-size:13px;font-weight:400;color:#212529}
+.search-bar input::placeholder{color:#6c757d;font-size:13px;font-weight:300}
+.search-bar button{background:#c4a962;border:none;padding:0 20px;cursor:pointer;color:#0a1c36;font-size:15px;transition:background 0.2s}
+.search-bar button:hover{background:#ffb600}
+.icon-btn:hover{color:#0a1c36;background:#f8f9fa}
+.icon-btn i{font-size:18px}
+.icon-btn .cbadge{position:absolute;top:4px;right:7px;background:#c4a962;color:#0a1c36;font-size:9px;font-weight:700;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center}
+.nav-item>a{display:block;padding:14px 22px;font-family:"Inter";font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#212529;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color 0.2s,
+        border-color 0.2s;white-space:nowrap}
+.nav-item>a:hover,.nav-item>a.active{color:#ffb600;border-bottom-color:#ffb600}
+.nav-item:hover .mega-drop{display:flex}
+.mega-drop-col:first-child{padding-left:0}
+.mega-drop-col:last-child{padding-right:0;border-right:none}
+.mega-drop-col a:first-child{display:block;font-family:"Inter";font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a1c36;padding:0 0 8px;margin-bottom:6px;border-bottom:1.5px solid #e0e0e0;transition:color 0.2s}
+.mega-drop-col a:first-child:hover{color:#c4a962}
+.mega-drop-col a:not(:first-child){display:block;font-family:"Inter";font-size:13px;font-weight:400;color:#6c757d;padding:5px 0;transition:color 0.2s,
+        padding-left 0.15s}
+.mega-drop-col a:not(:first-child):hover{color:#c4a962;padding-left:4px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 45%,
+          rgba(255, 182, 0, 0.07) 0%,
+          transparent 65%),
+        radial-gradient(ellipse 35% 60% at 5% 85%,
+          rgba(255, 182, 0, 0.04) 0%,
+          transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;top:-80px;right:-80px;width:500px;height:500px;border:1px solid rgba(255, 182, 0, 0.06);border-radius:50%;pointer-events:none}
+.hero .h1{margin-bottom:20px;font-size:52px;font-weight:700;letter-spacing:-0.02em;color:#f8f9fa}
+.hero-search:focus-within{border-color:#ffb600}
+.hero-search input{flex:1;padding:14px 18px;background:transparent;border:none;outline:none;font-family:"Inter";font-size:14px;font-weight:400;color:#fff}
+.hero-search input::placeholder{color:rgba(255, 255, 255, 0.38);font-size:13px;font-weight:300}
+.hero-search button{background:#c4a962;border:none;padding:0 28px;cursor:pointer;color:#0a1c36;font-family:"Inter";font-size:14px;font-weight:600;transition:background 0.2s;white-space:nowrap}
+.hero-search button:hover{background:#0a1c36;color:#ffffff}
+.hb-text strong{display:block;font-family:"Inter";text-align:left;font-size:13px;font-weight:600;color:#fff}
+.hb-text span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.45)}
+.trust-bar .container{display:grid;grid-template-columns:repeat(5, 1fr)}
+.trust-item:last-child{border-right:none}
+.trust-item:hover{background:#f8f9fa}
+.ti-text strong{display:block;font-family:"Inter";font-size:13px;font-weight:600;color:#212529}
+.ti-text span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:#6c757d}
+.stats-bar .container{display:flex;justify-content:center}
+.stat:last-child{border-right:none}
+.stat .num{font-family:"Inter";font-size:28px;font-weight:600;color:#0a1c36;display:block}
+.stat .lbl{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:#6c757d}
+.breadcrumb a:hover{color:#ffb600}
+.breadcrumb .sep{color:#e0e0e0;font-size:11px}
+.breadcrumb .cur{color:#212529;font-weight:500}
+.sec-head .sub{font-family:"Inter";font-size:17px;font-weight:400;line-height:1.5;color:#6c757d;margin-top:8px}
+.sec-head.center .sub{max-width:480px;margin-left:auto;margin-right:auto}
+.cat-card:hover{border-color:#ffb600;box-shadow:0 8px 28px rgba(255, 182, 0, 0.14);transform:translateY(-3px)}
+.cat-card:hover .cat-ico{background:rgba(255, 182, 0, 0.12);color:#c4a962}
+.cat-card strong{font-family:"Inter";font-size:14px;font-weight:600;color:#212529}
+.cat-card span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:#6c757d}
+.filter-acc-header span{font-family:"Inter";font-size:13px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#0a1c36}
+.filter-acc-header i{font-size:11px;color:#212529;transition:transform 0.3s}
+.filter-acc-item.open .filter-acc-header i{transform:rotate(180deg)}
+.filter-acc-item.open .filter-acc-content{display:block}
+.filter-list li{margin-bottom:12px}
+.filter-item-row:hover{color:#0a1c36}
+.cat-tree .main-cat{font-weight:600;color:#0a1c36;font-family:"Inter";margin-bottom:12px;display:block;font-size:13px}
+.sub-cat-list a{font-size:14px}
+.sub-sub-cat-list a{font-size:12px}
+.sub-cat-list li{margin-bottom:8px}
+.sub-cat-link:hover{color:#0a1c36}
+.cat-group:last-child{border-bottom:none}
+.main-cat-header:hover .main-cat{color:#c4a962}
+.main-cat-header i{font-size:11px;color:#adb5bd;transition:transform 0.3s ease}
+.cat-group.open .main-cat-header i{transform:rotate(180deg)}
+.cat-group .sub-cat-list{display:none;overflow:hidden}
+.cat-group.open .sub-cat-list{display:block;animation:slideDown 0.3s ease-out}
+.sub-sub-cat-list li{margin-bottom:4px}
+.sub-sub-cat-link:hover{color:#c4a962}
+.prod-card:hover{box-shadow:0 16px 48px rgba(10, 28, 54, 0.18)}
+.prod-card:hover .prod-name{color:#c4a962}
+.prod-img .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255, 255, 255, 0.3);font-size:48px}
+.ph img{width:60% !important}
+.prod-img img{width:100%;height:100%;object-fit:contain;transition:transform 0.4s}
+.prod-card:hover .prod-img img{transform:scale(1.06)}
+.prod-card:hover .pwish{opacity:1;transform:scale(1)}
+.pwish:hover{background:#ffb600;border-color:#ffb600;color:#0a1c36}
+.prod-ref i{font-size:10px;color:#198754}
+.btn-cart:hover{background:#c4a962}
+.promo::before{content:"";position:absolute;right:-50px;bottom:-50px;width:240px;height:240px;border-radius:50%;opacity:0.07}
+.promo-dark::before{background:#ffb600}
+.promo-gold-bg::before{background:#0a1c36}
+.promo .plabel{font-family:"Inter";font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:10px}
+.promo-dark .plabel{color:rgba(255, 182, 0, 0.6)}
+.promo-gold-bg .plabel{color:rgba(10, 28, 54, 0.45)}
+.promo .h3{margin-bottom:10px}
+.promo-dark .h3{color:#ffffff}
+.promo-gold-bg .h3{color:#0a1c36}
+.promo .pbody{font-family:"Inter";font-size:17px;font-weight:400;line-height:1.5;margin-bottom:26px}
+.promo-dark .pbody{color:rgba(255, 255, 255, 0.6)}
+.promo-gold-bg .pbody{color:rgba(10, 28, 54, 0.65)}
+.brands-wrap .h2{margin:8px 0 6px}
+.brand:hover{color:#0a1c36}
+.w24-slider-track:active{cursor:grabbing}
+.w24-review-card:hover{background:rgba(255, 255, 255, 0.05);border-color:#c4a962;transform:translateY(-5px)}
+.w24-quote i{color:#c4a962;font-size:18px;margin-bottom:15px;display:block}
+.w24-quote p{color:rgba(255, 255, 255, 0.85);font-size:15px;line-height:1.6;min-height:100px}
+.w24-user-info strong{display:block;color:#fff;font-size:14px}
+.w24-user-info span{font-size:12px;color:rgba(255, 255, 255, 0.5)}
+.eapps-instagram-feed-posts-item img{transition:transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important}
+.eapps-instagram-feed-posts-item:hover img{transform:scale(1.1) !important}
+.eapps-instagram-feed-posts-item::after{content:"";position:absolute;inset:0;background:rgba(10, 28, 54, 0.6);opacity:0;transition:0.4s ease}
+.eapps-instagram-feed-posts-item:hover::after{opacity:1}
+.eapps-instagram-feed>div:last-child{display:none !important}
+.brands-title::before{content:"OUR PARTNERS";font-family:"Inter";font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c4a962}
+.brand-item img{max-width:100%;height:200px;max-height:200px;object-fit:contain;filter:grayscale(100%);opacity:0.6;transition:0.3s;user-select:none}
+.brand-item img:hover{filter:grayscale(0%);opacity:1}
+.slider-btn:hover{background:#f8f9fa;border-color:#0a1c36}
+.ft-bar .container{display:grid;grid-template-columns:repeat(3, 1fr)}
+.ft-item:last-child{border-right:none}
+.ft-text strong{display:block;font-family:"Inter";font-size:14px;font-weight:600;color:#fff;margin-bottom:3px}
+.ft-text span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.45)}
+.f-brand .logo{display:flex;justify-content:flex-start;align-items:center;margin-left:-13px;margin-bottom:40px}
+.f-brand .logo img{width:170px;height:auto;object-fit:contain;margin-bottom:10px;margin-left:2px}
+.f-brand p{margin-top:-50px;font-family:"Inter";font-size:12px;font-weight:400;line-height:1.8;max-width:270px}
+.soc:hover{background:#ffb600;color:#0a1c36;border-color:#ffb600}
+.f-ci i{color:#c4a962;font-size:13px;margin-top:3px;flex-shrink:0}
+.f-ci span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.5)}
+.f-col h4{font-family:"Inter";font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#ffffff;margin-bottom:18px}
+.f-col h4.mt{margin-top:22px}
+.f-col ul{padding:0;list-style:none}
+.f-col ul li{margin-bottom:9px}
+.f-col ul li a{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.5);transition:color 0.2s}
+.f-col ul li a:hover{color:#ffb600}
+.f-sup:last-child{border-right:none}
+.f-sup i{font-size:18px;color:#c4a962;flex-shrink:0}
+.f-sup strong{display:block;font-family:"Inter";font-size:13px;font-weight:600;color:#fff}
+.f-sup span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.4)}
+.f-bottom p{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.4)}
+.mobile-filter-btn:hover{background:#c4a962;color:#0a1c36}
+.mobile-filter-btn i{font-size:14px}
+.filter-drawer-head h3{font-family:"Inter";font-size:18px;font-weight:600;color:#0a1c36}
+.filter-drawer-close:hover{color:#0a1c36;background:#f8f9fa}
+.btn-apply-filters:hover{background:#c4a962;color:#0a1c36}
+.btn-reset-filters:hover{color:#0a1c36;border-color:#0a1c36}
+.nav-mobile-item-header i{font-size:11px;transition:transform 0.3s}
+.nav-mobile-item.open .nav-mobile-item-header i{transform:rotate(180deg)}
+.nav-mobile-item.open .nav-mobile-sub{display:flex}
+.nav-mobile-sub a{padding:7px 0;font-family:"Inter";font-size:13px;color:#6c757d;transition:color 0.2s;display:block}
+.nav-mobile-group-header span a{font-family:"Inter";font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a1c36}
+.nav-mobile-sub a:hover{color:#c4a962}
+.nav-mobile-group:last-child{border-bottom:none}
+.nav-mobile-group-header span{font-family:"Inter";font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a1c36}
+.nav-mobile-group-header i{font-size:10px;color:#6c757d;transition:transform 0.25s}
+.nav-mobile-group.open .nav-mobile-group-header i{transform:rotate(180deg)}
+.nav-mobile-group-header:hover span{color:#c4a962}
+.nav-mobile-group.open .nav-mobile-group-links{display:flex}
+footer:not(:has(.footer-grid)){display:none !important}
+@media (min-width: 768px) and (max-width: 1199px){.shop-layout{grid-template-columns:1fr}.filter-sidebar{display:none}.mobile-filter-btn{display:inline-flex}.prod-grid{grid-template-columns:repeat(2, 1fr);gap:18px}.cats{grid-template-columns:repeat(3, 1fr)}.promo-grid{grid-template-columns:1fr 1fr}.hero{padding:60px 20px}.hero .h1{font-size:40px}.w24-review-card{width:calc((100% / 2) - 12px)}.container{padding:0 18px}.hdr{padding:12px 18px;gap:16px}.logo img{width:200px;margin-top:10px;height:auto}.topbar .container{grid-template-columns:1fr auto 1fr;gap:10px}.topbar-items{gap:12px;flex-wrap:nowrap;justify-content:center}.topbar .india-dropdown,.topbar a,.topbar span{font-size:11px}.topbar i{font-size:12px}nav>.nav-inner{display:flex;justify-content:center}.nav-item>a{padding:12px 14px;font-size:10px}.nav-mobile-toggle{display:none}.prod-grid,.prod-grid-4{grid-template-columns:repeat(2, 1fr) !important;gap:18px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.f-support{grid-template-columns:1fr;margin:0}.f-sup{padding:16px 0;border-right:none;border-bottom:1px solid rgba(255, 255, 255, 0.06)}.f-sup:last-child{border-bottom:none}.f-brand .logo img{margin-left:0}.ft-bar .container{grid-template-columns:1fr;gap:0}.ft-item{border-right:none;border-bottom:1px solid rgba(255, 255, 255, 0.07);padding:20px 0}.ft-item:last-child{border-bottom:none}}
+@media (max-width: 767px){.topbar{display:none}.container{padding:0 14px}.container h2{font-size:25px}header{position:sticky;top:0;z-index:200}.hdr{display:grid;grid-template-columns:auto 1fr auto auto;grid-template-rows:auto auto;align-items:center;gap:0px;padding:10px 14px}.sec-row{display:flex;flex-direction:column;align-items:flex-start;gap:16px}.logo{grid-column:1;grid-row:1;min-width:auto;width:auto;margin-left:0;display:flex;align-items:center}.logo img{width:210px;height:auto;display:block;margin-left:-18px;margin-top:0px}.nav-mobile-toggle{display:flex;align-items:center;justify-content:center;grid-column:4;grid-row:1}.hdr-icons{grid-column:3;grid-row:1;gap:12px;display:flex;align-items:center}.icon-btn{padding:6px 8px;display:flex;align-items:center;justify-content:center}.icon-btn span:not(.cbadge){display:none}.search-bar{grid-column:1 / -1;grid-row:2;width:100%}.bests h2{font-size:25px;margin-bottom:15px}nav>.nav-inner{display:none}.nav-mobile-menu{display:none;width:100%;max-height:80vh;overflow-y:auto;background:#ffffff;z-index:199;box-shadow:0 10px 15px rgba(0, 0, 0, 0.1)}.nav-mobile-menu.open{display:flex}.hero{padding:40px 14px}.hero .h1{font-size:28px;line-height:1.3}.hero-desc{font-size:14px}.hero-search{flex-direction:row}.hero-search button{width:auto;padding:0 16px}.hero-badges{gap:14px;flex-wrap:wrap;justify-content:center}.hb-text span{display:none}.cats{grid-template-columns:repeat(2, 1fr)}.promo-grid{grid-template-columns:1fr}.promo{padding:32px 24px;min-height:180px}.slider-outer{padding:0 32px}.brand-item{width:140px;height:120px}.brand-item img{height:120px}.w24-reviews-sec{padding:60px 0}.w24-review-card{width:100%}.shop-layout{grid-template-columns:1fr;gap:0;padding:4px 0 32px}.filter-sidebar{display:none}.mobile-filter-btn{display:inline-flex;width:100%;justify-content:center;margin-bottom:10px}.prod-grid{grid-template-columns:1fr !important;gap:14px}.prod-img-wrap{height:200px}.prod-body{padding:12px 14px;gap:5px}.prod-name{font-size:14px}.pprice{font-size:18px}.btn-cart{font-size:13px;padding:10px}.prod-wish{opacity:1;transform:scale(1)}.trust-bar .container{grid-template-columns:repeat(2, 1fr)}.stats-bar .container{flex-direction:column;align-items:flex-start;gap:0}.stat{padding:10px 0;border-right:none;border-bottom:1px solid #e0e0e0;width:100%}.stat:last-child{border-bottom:none}.stat .num{font-size:22px}footer{padding:10px 0 0}.footer-grid{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.f-brand .logo{margin-left:0}.f-brand p{max-width:100%}.f-brand .logo img{margin-left:-10px}.f-support{grid-template-columns:1fr;margin:0}.f-sup{border-right:none;border-bottom:1px solid rgba(255, 255, 255, 0.06);padding:14px 0}.f-sup:last-child{border-bottom:none}.f-bottom{flex-direction:column;align-items:center;gap:10px;padding:14px 0}.f-pays{flex-wrap:wrap;gap:6px}.ft-bar{padding:24px 0}.ft-bar .container{grid-template-columns:1fr;gap:0}.ft-item{border-right:none;padding:16px 0;border-bottom:1px solid rgba(255, 255, 255, 0.07)}.ft-item:last-child{border-bottom:none}.btn,.btn-cart,.icon-btn{min-height:44px}.seen-bar{padding:18px 16px}.seen-bar p{font-size:14px}}
+</style>
+</head>
+
+<body style="font-family:&quot;Inter&quot;;font-size:16px;font-weight:400;line-height:1.6;color:#212529;background:#ffffff;-webkit-font-smoothing:antialiased;font-family:&quot;Inter&quot;;font-size:16px;font-weight:400;line-height:1.5;color:#212529;background:#ffffff;-webkit-font-smoothing:antialiased">
+  <!-- TESTIMONIALS -->
+  <section class="w24-reviews-sec" style="background-color:#0a1c36;padding:100px 0;font-family:&quot;Inter&quot;;overflow:hidden">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <!-- Review Header -->
+      <div class="w24-reviews-header" style="text-align:left;margin-bottom:60px">
+        <span class="label" style="font-family:&quot;Inter&quot;;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#c4a962;display:block;margin-bottom:10px">Client Testimonials</span>
+        <h2 class="h2" style="color: #fff;font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em;font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em">What our collectors say</h2>
+        <div class="w24-trust-summary" style="text-align: left;">
+          <div class="w24-stars-main" style="color:#c4a962;font-size:20px;margin-bottom:10px">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p class="caption" style="margin: 0 !important; padding: 0 !important; text-align: left !important; color: rgba(255, 255, 255, 0.7); display: block;;font-family:&quot;Inter&quot;;font-size:13px;font-weight:300;line-height:1.5;color:#6c757d"><strong style="color: #ffb600">4.8 / 5 Rating</strong> based on 12,450+ verified global reviews</p>
+        </div>
+      </div>
+
+      <!-- Slider Window -->
+      <div class="w24-slider-window" style="overflow:hidden;max-width:100%;margin:0 auto">
+        <div class="w24-slider-track" id="reviewTrack" style="display:flex;gap:24px;transition:transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);cursor:grab">
+          <!-- Review 1 -->
+          <div class="w24-review-card" style="background:rgba(255, 255, 255, 0.03);border:1px solid rgba(255, 255, 255, 0.1);border-radius:12px;padding:30px;display:flex;flex-direction:column;flex-shrink:0;width:calc((100% / 3) - 16px);transition:all 0.3s ease">
+            <div class="w24-card-top" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+              <div class="w24-stars-small" style="color:#c4a962;font-size:12px;letter-spacing:2px">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="w24-date" style="font-size:12px;color:rgba(255, 255, 255, 0.4)">2 days ago</span>
+            </div>
+            <div class="w24-quote" style="text-align: left;">
+              <i class="fa-solid fa-quote-left"></i>
+              <p style="margin: 0 !important; padding: 0 !important; text-align: left !important;">The authentication process gave me complete peace of mind. Buying a Patek Philippe online was a big step, but Watchroom24 made it seamless and secure.</p>
+            </div>
+            <div class="w24-user" style="margin-top:30px;display:flex;align-items:center;gap:15px;padding-top:20px;border-top:1px solid rgba(255, 255, 255, 0.08)">
+              <div class="w24-avatar" style="width:45px;height:45px;background:#c4a962;color:#0a1c36;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">JS</div>
+              <div class="w24-user-info">
+                <strong>Julian Schmidt</strong>
+                <span>Munich, Germany</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="w24-review-card" style="background:rgba(255, 255, 255, 0.03);border:1px solid rgba(255, 255, 255, 0.1);border-radius:12px;padding:30px;display:flex;flex-direction:column;flex-shrink:0;width:calc((100% / 3) - 16px);transition:all 0.3s ease">
+            <div class="w24-card-top" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+              <div class="w24-stars-small" style="color:#c4a962;font-size:12px;letter-spacing:2px">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="w24-date" style="font-size:12px;color:rgba(255, 255, 255, 0.4)">Today</span>
+            </div>
+            <div class="w24-quote" style="text-align: left;">
+              <i class="fa-solid fa-quote-left"></i>
+              <p style="margin: 0 !important; padding: 0 !important; text-align: left !important;">Incredible selection and lightning-fast insured shipping. The watch arrived in even better condition than described. Highly recommended!</p>
+            </div>
+            <div class="w24-user" style="margin-top:30px;display:flex;align-items:center;gap:15px;padding-top:20px;border-top:1px solid rgba(255, 255, 255, 0.08)">
+              <div class="w24-avatar" style="width:45px;height:45px;background:#c4a962;color:#0a1c36;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">AM</div>
+              <div class="w24-user-info">
+                <strong>Arnav Mehra</strong>
+                <span>Dubai, UAE</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="w24-review-card" style="background:rgba(255, 255, 255, 0.03);border:1px solid rgba(255, 255, 255, 0.1);border-radius:12px;padding:30px;display:flex;flex-direction:column;flex-shrink:0;width:calc((100% / 3) - 16px);transition:all 0.3s ease">
+            <div class="w24-card-top" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+              <div class="w24-stars-small" style="color:#c4a962;font-size:12px;letter-spacing:2px">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="w24-date" style="font-size:12px;color:rgba(255, 255, 255, 0.4)">1 week ago</span>
+            </div>
+            <div class="w24-quote" style="text-align: left;">
+              <i class="fa-solid fa-quote-left"></i>
+              <p style="margin: 0 !important; padding: 0 !important; text-align: left !important;">The customer service team is world-class. They answered all my technical questions about the movement before I committed to the purchase.</p>
+            </div>
+            <div class="w24-user" style="margin-top:30px;display:flex;align-items:center;gap:15px;padding-top:20px;border-top:1px solid rgba(255, 255, 255, 0.08)">
+              <div class="w24-avatar" style="width:45px;height:45px;background:#c4a962;color:#0a1c36;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">LB</div>
+              <div class="w24-user-info">
+                <strong>Laura Bennett</strong>
+                <span>London, UK</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="w24-review-card" style="background:rgba(255, 255, 255, 0.03);border:1px solid rgba(255, 255, 255, 0.1);border-radius:12px;padding:30px;display:flex;flex-direction:column;flex-shrink:0;width:calc((100% / 3) - 16px);transition:all 0.3s ease">
+            <div class="w24-card-top" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+              <div class="w24-stars-small" style="color:#c4a962;font-size:12px;letter-spacing:2px">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="w24-date" style="font-size:12px;color:rgba(255, 255, 255, 0.4)">3 days ago</span>
+            </div>
+            <div class="w24-quote" style="text-align: left;">
+              <i class="fa-solid fa-quote-left"></i>
+              <p style="margin: 0 !important; padding: 0 !important; text-align: left !important;">Found a rare vintage Omega Speedmaster here. The condition was exactly as shown in the high-res photos. A truly professional marketplace.</p>
+            </div>
+            <div class="w24-user" style="margin-top:30px;display:flex;align-items:center;gap:15px;padding-top:20px;border-top:1px solid rgba(255, 255, 255, 0.08)">
+              <div class="w24-avatar" style="width:45px;height:45px;background:#c4a962;color:#0a1c36;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">DK</div>
+              <div class="w24-user-info">
+                <strong>David Karlsson</strong>
+                <span>Stockholm, Sweden</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="w24-slider-nav" id="sliderDots" style="display:flex;justify-content:center;gap:10px;margin-top:50px">
+        <!-- Dots generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM LIFESTYLE SECTION (WHITE BG) -->
+  <section class="w24-insta-light-sec" style="background-color:#ffffff;padding:80px 0;font-family:&quot;Inter&quot;;border-top:1px solid #e0e0e0">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <span class="label" style="font-family:&quot;Inter&quot;;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#c4a962;display:block;margin-bottom:10px">Social Journal</span>
+      <h2 class="h2" style="color: #0a1c36; margin-bottom: 20px;font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em;font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em">
+        Watchroom24 Lifestyle
+      </h2>
+
+      <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+      <div class="elfsight-app-95b15d75-cd27-40de-943c-58539e627917" data-elfsight-app-lazy=""></div>
+    </div>
+  </section>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        FOOTER TRUST BAR
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <div class="ft-bar" style="background:#0d2244;padding:40px 0;border-top:1px solid rgba(255, 255, 255, 0.05)">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <div class="ft-item" style="display:flex;align-items:center;gap:16px;padding:0 44px;border-right:1px solid rgba(255, 255, 255, 0.07)">
+        <div class="ft-icon" style="width:50px;height:50px;flex-shrink:0;border-radius:50%;background:rgba(255, 182, 0, 0.1);border:1px solid rgba(255, 182, 0, 0.18);display:flex;align-items:center;justify-content:center;color:#c4a962;font-size:20px"><i class="fa-solid fa-circle-check"></i></div>
+        <div class="ft-text">
+          <strong>100% Authenticity</strong>
+          <span>Certified &amp; Guaranteed</span>
+        </div>
+      </div>
+      <div class="ft-item" style="display:flex;align-items:center;gap:16px;padding:0 44px;border-right:1px solid rgba(255, 255, 255, 0.07)">
+        <div class="ft-icon" style="width:50px;height:50px;flex-shrink:0;border-radius:50%;background:rgba(255, 182, 0, 0.1);border:1px solid rgba(255, 182, 0, 0.18);display:flex;align-items:center;justify-content:center;color:#c4a962;font-size:20px"><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="ft-text">
+          <strong>Free Shipping</strong>
+          <span>On orders over â‚¬50</span>
+        </div>
+      </div>
+      <div class="ft-item" style="display:flex;align-items:center;gap:16px;padding:0 44px;border-right:1px solid rgba(255, 255, 255, 0.07)">
+        <div class="ft-icon" style="width:50px;height:50px;flex-shrink:0;border-radius:50%;background:rgba(255, 182, 0, 0.1);border:1px solid rgba(255, 182, 0, 0.18);display:flex;align-items:center;justify-content:center;color:#c4a962;font-size:20px"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="ft-text">
+          <strong>2-Year Warranty</strong>
+          <span>On all products</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        FOOTER
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <footer style="background:#0a1c36;color:rgba(255, 255, 255, 0.55);padding:35px 0 0">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <div class="footer-grid" style="text-align: left;;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255, 255, 255, 0.07)">
+        <div class="f-brand" style="text-align: left;">
+          <div class="logo" style="justify-content: flex-start;;font-family:&quot;Inter&quot;;font-size:26px;font-weight:300;color:#0a1c36;white-space:nowrap;min-width:170px;display:flex;justify-content:center;align-items:center;width:10%;margin-left:-25px">
+            <img src="https://i.postimg.cc/T3sJg7Bv/Chat-GPT-Image-Mar-18-2026-11-09-26-AM-copy.png"  style="width:170px;height:auto;object-fit:contain;margin-bottom:10px;margin-left:2px" />
+          </div>
+          <p style="margin: -50px 0 0 0 !important; padding: 0 !important; text-align: left !important; display: block;">Your specialist for exclusive watches, exquisite jewelry and bags. Since 2010, customers from over 50 countries have trusted us for quality and style.</p>
+          <div class="socials" style="display:flex;gap:10px;margin-top:20px">
+            <div class="soc" style="width:36px;height:36px;border-radius:50%;background:rgba(255, 255, 255, 0.06);border:1px solid rgba(255, 255, 255, 0.09);display:flex;align-items:center;justify-content:center;color:rgba(255, 255, 255, 0.55);cursor:pointer;transition:all 0.2s"><i class="fa-brands fa-facebook-f"></i></div>
+            <div class="soc" style="width:36px;height:36px;border-radius:50%;background:rgba(255, 255, 255, 0.06);border:1px solid rgba(255, 255, 255, 0.09);display:flex;align-items:center;justify-content:center;color:rgba(255, 255, 255, 0.55);cursor:pointer;transition:all 0.2s"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div class="soc" style="width:36px;height:36px;border-radius:50%;background:rgba(255, 255, 255, 0.06);border:1px solid rgba(255, 255, 255, 0.09);display:flex;align-items:center;justify-content:center;color:rgba(255, 255, 255, 0.55);cursor:pointer;transition:all 0.2s"><i class="fa-brands fa-instagram"></i></div>
+            <div class="soc" style="width:36px;height:36px;border-radius:50%;background:rgba(255, 255, 255, 0.06);border:1px solid rgba(255, 255, 255, 0.09);display:flex;align-items:center;justify-content:center;color:rgba(255, 255, 255, 0.55);cursor:pointer;transition:all 0.2s"><i class="fa-brands fa-youtube"></i></div>
+          </div>
+          <div class="f-contact" style="margin-top:22px">
+            <div class="f-ci" style="display:flex;align-items:flex-start;gap:9px;margin-bottom:9px">
+              <i class="fa-solid fa-location-dot"></i><span>Sample Street 123, 12345 Berlin, DE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="f-col" style="text-align: left;">
+          <h4 style="text-align: left !important; margin: 0 0 18px 0 !important;">Shop</h4>
+          <ul style="margin: 0 !important; padding: 0 !important; text-align: left !important;">
+            <li style="margin: 0 0 9px 0 !important;"><a href="/womens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Women's Watches</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/mens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Men's Watches</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Jewelry</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Glasses</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bags</a></li>
+          </ul>
+        </div>
+
+        <div class="f-col" style="text-align: left;">
+          <ul style="margin: 32px 0 0 0 !important; padding: 0 !important; text-align: left !important;">
+            <li style="margin: 0 0 9px 0 !important;"><a href="/rightofwithdrawal" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Right of Withdrawal</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/withdrawalform" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Withdrawal Form</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/impressum" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Imprint</a></li>
+          </ul>
+        </div>
+
+        <div class="f-col" style="text-align: left;">
+          <ul style="margin: 32px 0 0 0 !important; padding: 0 !important; text-align: left !important;">
+            <li style="margin: 0 0 9px 0 !important;"><a href="/privacypolicy" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Privacy Policy</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/conditions" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Terms &amp; Conditions</a></li>
+            <li style="margin: 0 0 9px 0 !important;"><a href="/contacts" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="f-support" style="display:grid;grid-template-columns:repeat(3, 1fr);border-top:1px solid rgba(255, 255, 255, 0.07);margin:0 -24px">
+        <div class="f-sup" style="display:flex;align-items:center;gap:13px;padding:20px 28px;border-right:1px solid rgba(255, 255, 255, 0.06)">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Phone Support</strong><span>0176 55797207</span>
+          </div>
+        </div>
+        <div class="f-sup" style="display:flex;align-items:center;gap:13px;padding:20px 28px;border-right:1px solid rgba(255, 255, 255, 0.06)">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>E-Mail Support</strong><span><a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><span>info@watchroom24.com</span></a></span>
+          </div>
+        </div>
+        <div class="f-sup" style="display:flex;align-items:center;gap:13px;padding:20px 28px;border-right:1px solid rgba(255, 255, 255, 0.06)">
+          <i class="fa-solid fa-building"></i>
+          <div>
+            <strong>Business Hours</strong><span>Monâ€“Fri: 9:00 AM â€“ 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="f-bottom" style="display:flex;justify-content:center;align-items:center;padding:18px 0;flex-wrap:wrap;gap:12px">
+        <p>Â© 2026 Watchroom24. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FILTER DRAWER (mobile/tablet) -->
+  <div class="filter-overlay" id="filterOverlay" style="display:none;position:fixed;inset:0;background:rgba(10, 28, 54, 0.55);z-index:900;backdrop-filter:blur(2px);opacity:0;transition:opacity 0.3s"></div>
+  <div class="filter-drawer" id="filterDrawer" style="position:fixed;top:0;left:0;height:100%;width:min(340px, 90vw);background:#ffffff;z-index:950;overflow-y:auto;transform:translateX(-100%);transition:transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);display:flex;flex-direction:column;box-shadow:0 16px 48px rgba(10, 28, 54, 0.18)">
+    <div class="filter-drawer-head" style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #e0e0e0;position:sticky;top:0;background:#ffffff;z-index:2">
+      <h3 style="font-family:&quot;Inter&quot;;font-size:26px;font-weight:500;line-height:1.2;letter-spacing:-0.01em">
+        <i class="fa-solid fa-sliders" style="font-size: 14px; margin-right: 8px; color: #c4a962"></i>
+        Filter
+      </h3>
+      <button class="filter-drawer-close" id="closeFilterDrawer" style="background:none;border:none;font-size:20px;cursor:pointer;color:#6c757d;padding:4px 8px;border-radius:4px;transition:color 0.2s,
+        background 0.2s">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="filter-drawer-body" id="filterDrawerBody" style="padding:0 20px 24px;flex:1;overflow-y:auto"></div>
+    <div class="filter-drawer-footer" style="padding:16px 20px;border-top:1px solid #e0e0e0;display:flex;gap:10px;position:sticky;bottom:0;background:#ffffff">
+      <button class="btn-apply-filters" id="applyFilters" style="flex:1;background:#0a1c36;color:#ffffff;border:none;border-radius:6px;padding:12px;font-family:&quot;Inter&quot;;font-size:14px;font-weight:500;cursor:pointer;transition:background 0.2s">
+        Filter anwenden
+      </button>
+      <button class="btn-reset-filters" id="resetFilters" style="background:none;color:#6c757d;border:1.5px solid #e0e0e0;border-radius:6px;padding:12px 16px;font-family:&quot;Inter&quot;;font-size:13px;cursor:pointer;transition:color 0.2s,
+        border-color 0.2s">
+        ZurÃ¼cksetzen
+      </button>
+    </div>
+  </div>
+
+  <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+  <script src="https://elfsightcdn.com/platform.js" async=""></script>
+
+  <script>
+(function () {
+  // â”€â”€ juno handler hoy to pehla kaadho (duplicate/gaayà¤¬ banne atkave) â”€â”€
+  if (window.__whr24Click) document.removeEventListener("click", window.__whr24Click);
+  if (window.__whr24Resize) window.removeEventListener("resize", window.__whr24Resize);
+  if (window.__whr24Key) document.removeEventListener("keydown", window.__whr24Key);
+
+  // â”€â”€ CLICK: badhu event delegation thi (SPA re-render pachi pan chale) â”€â”€
+  window.__whr24Click = function (e) {
+
+    // 1. filter drawer kholo (mobile/tablet)
+        // 1. filter drawer kholo (mobile/tablet)
+    if (e.target.closest("#openFilterDrawer")) {
+      const body = document.getElementById("filterDrawerBody");
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      const sidebar = document.querySelector(".filter-sidebar");
+      if (body && sidebar) {
+        body.innerHTML = sidebar.innerHTML;            // dar vàª–à¤¤à¥‡ taazu clone
+        body.querySelectorAll(".filter-acc-item").forEach(i => i.classList.add("open")); // badha section khullÐ°
+        body.querySelectorAll(".cat-group").forEach(g => g.classList.add("open"));       // category tree pan khullÑƒ
+      }
+      if (overlay && drawer) {
+        overlay.classList.add("open");
+        drawer.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      return;
+    }
+
+    // 2. filter drawer band karo (close / overlay / apply)
+    if (e.target.closest("#closeFilterDrawer") || e.target.closest("#filterOverlay") || e.target.closest("#applyFilters")) {
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      if (overlay && drawer) {
+        overlay.classList.remove("open");
+        drawer.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      return;
+    }
+
+    // 3. reset filters (drawer ni andar)
+    if (e.target.closest("#resetFilters")) {
+      const body = document.getElementById("filterDrawerBody");
+      if (body) {
+        body.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+        body.querySelectorAll("input[type=range]").forEach(r => r.value = r.max);
+      }
+      return;
+    }
+
+    // 4. sidebar filter accordion (Categories, Manufacturer, vàª—à«‡àª°à«‡)
+    //    NOTE: drawer ni andar clone thayel content ma pan aa j class chhe, etle àª¬àª‚àª¨à«‡ jagya chale
+    const filterHeader = e.target.closest(".filter-acc-header");
+    if (filterHeader) {
+      filterHeader.parentElement.classList.toggle("open");
+      return;
+    }
+
+    // 5. sidebar nested category (LADIES / MEN / KIDS tree)
+    const mainCatHeader = e.target.closest(".main-cat-header");
+    if (mainCatHeader) {
+      mainCatHeader.parentElement.classList.toggle("open");
+      return;
+    }
+
+    // 6. hamburger toggle
+    const navToggle = e.target.closest("#navMobileToggle");
+    if (navToggle) {
+      const menu = document.getElementById("navMobileMenu");
+      if (menu) {
+        const open = menu.classList.toggle("open");
+        const icon = navToggle.querySelector("i");
+        if (icon) icon.className = open ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+      }
+      return;
+    }
+
+    // 7. mobile nav top-level accordion
+    const mobileHeader = e.target.closest(".nav-mobile-item-header");
+    if (mobileHeader) {
+      const item = mobileHeader.parentElement;
+      document.querySelectorAll(".nav-mobile-item").forEach(i => { if (i !== item) i.classList.remove("open"); });
+      item.classList.toggle("open");
+      return;
+    }
+
+    // 8. mobile nav nested group
+    const groupHeader = e.target.closest(".nav-mobile-group-header");
+    if (groupHeader) {
+      e.stopPropagation();
+      groupHeader.parentElement.classList.toggle("open");
+      return;
+    }
+
+    // 9. wishlist heart (card ni navigation pehla check karvu)
+    const wishBtn = e.target.closest(".pwish, .prod-wish, .btn-wish");
+    if (wishBtn) {
+      e.stopPropagation();
+      const icon = wishBtn.querySelector("i");
+      if (icon) {
+        if (icon.classList.contains("fa-regular")) { icon.classList.replace("fa-regular", "fa-solid"); wishBtn.style.color = "#dc3545"; }
+        else { icon.classList.replace("fa-solid", "fa-regular"); wishBtn.style.color = ""; }
+      }
+      return;
+    }
+
+    // 10. thumbnail gallery (singlepage)
+    const thumb = e.target.closest(".thumb");
+    if (thumb) {
+      document.querySelectorAll(".thumb").forEach(t => t.classList.remove("active"));
+      thumb.classList.add("active");
+      const src = thumb.querySelector("img") && thumb.querySelector("img").src;
+      const main = document.querySelector(".main-image-wrap img");
+      if (src && main) { main.style.opacity = "0"; setTimeout(() => { main.src = src; main.style.opacity = "1"; }, 200); }
+      return;
+    }
+
+    // 11. product card -> singlepage (Add to Cart / wishlist pr click hoy to nàª¹à©€)
+    const card = e.target.closest(".prod-card");
+    if (card && !e.target.closest(".btn-cart")) {
+      window.location.href = "/singlepage";
+      return;
+    }
+  };
+  document.addEventListener("click", window.__whr24Click);
+
+  // â”€â”€ ESC thi filter drawer band â”€â”€
+  window.__whr24Key = function (e) {
+    if (e.key === "Escape") {
+      const overlay = document.getElementById("filterOverlay");
+      const drawer = document.getElementById("filterDrawer");
+      if (overlay && drawer) {
+        overlay.classList.remove("open");
+        drawer.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    }
+  };
+  document.addEventListener("keydown", window.__whr24Key);
+
+  // â”€â”€ resize pr mobile menu band â”€â”€
+  window.__whr24Resize = function () {
+    if (window.innerWidth >= 1200) {
+      const menu = document.getElementById("navMobileMenu");
+      const toggle = document.getElementById("navMobileToggle");
+      if (menu) menu.classList.remove("open");
+      if (toggle) { const i = toggle.querySelector("i"); if (i) i.className = "fa-solid fa-bars"; }
+    }
+  };
+  window.addEventListener("resize", window.__whr24Resize);
+})();
+</script>
+
+
+</body></html>

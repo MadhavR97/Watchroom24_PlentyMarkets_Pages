@@ -1,0 +1,731 @@
+﻿<!DOCTYPE html><html lang="en" style="scroll-behavior:smooth"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watchroom24 â€“ Exclusive Luxury Watches &amp; Exquisite Jewelry</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style type="text/css">
+@keyframes slideDown{
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+@keyframes fadeUp{
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+:root{--navy:#0a1c36;--navy2:#0d2244;--gold:#ffb600;--gold-dark:#c4a962;--white:#ffffff;--bg-light:#f8f9fa;--text-dark:#212529;--text-light:#6c757d;--border:#e0e0e0;--red:#dc3545;--green:#198754;--font-display:"Inter";--font-body:"Inter";--font-mono:"Inter";--radius:6px;--shadow-sm:0 2px 8px rgba(10, 28, 54, 0.07);--shadow-md:0 6px 24px rgba(10, 28, 54, 0.12);--shadow-lg:0 16px 48px rgba(10, 28, 54, 0.18)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.btn-navy:hover{background:#0d2444;box-shadow:0 6px 24px rgba(10, 28, 54, 0.12)}
+.btn-ghost:hover{border-color:#0a1c36;color:#0a1c36}
+.topbar .container{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.topbar .container::before{content:"";display:block}
+.topbar a,.topbar span{font-family:"Inter";font-size:13px;font-weight:500;color:rgba(255, 255, 255, 0.55);transition:color 0.2s;display:flex;align-items:center;gap:8px;text-decoration:none}
+.topbar a:hover{color:#c4a962}
+.topbar .gold-link{color:#c4a962 !important;font-weight:600}
+.topbar i{font-size:14px}
+.topbar .india-dropdown{font-family:"Inter";cursor:pointer;display:flex;align-items:center;gap:5px;color:rgba(255, 255, 255, 0.55);justify-self:end;font-size:13px}
+.topbar .india-dropdown i:last-child{font-size:10px;margin-left:2px;color:rgba(255, 255, 255, 0.55)}
+.logo img{width:120%;height:100%;margin-top:10px}
+.logo span{color:#ffb600}
+.search-bar:focus-within{border-color:#ffb600;box-shadow:0 0 0 3px rgba(255, 182, 0, 0.12)}
+.search-bar input{flex:1;padding:11px 16px;border:none;outline:none;background:transparent;font-family:"Inter";font-size:13px;font-weight:400;color:#212529}
+.search-bar input::placeholder{color:#6c757d;font-size:13px;font-weight:300}
+.search-bar button{background:#c4a962;border:none;padding:0 20px;cursor:pointer;color:#0a1c36;font-size:15px;transition:background 0.2s}
+.search-bar button:hover{background:#ffb600}
+.icon-btn:hover{color:#0a1c36;background:#f8f9fa}
+.icon-btn i{font-size:18px}
+.icon-btn .cbadge{position:absolute;top:4px;right:7px;background:#c4a962;color:#0a1c36;font-size:9px;font-weight:700;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center}
+.nav-item>a{display:block;padding:14px 22px;font-family:"Inter";font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#212529;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color 0.2s,
+        border-color 0.2s;white-space:nowrap}
+.nav-item>a:hover,.nav-item>a.active{color:#ffb600;border-bottom-color:#ffb600}
+.nav-item:hover .mega-drop{display:flex}
+.mega-drop-col:first-child{padding-left:0}
+.mega-drop-col:last-child{padding-right:0;border-right:none}
+.mega-drop-col a:first-child{display:block;font-family:"Inter";font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a1c36;padding:0 0 8px;margin-bottom:6px;border-bottom:1.5px solid #e0e0e0;transition:color 0.2s}
+.mega-drop-col a:first-child:hover{color:#c4a962}
+.mega-drop-col a:not(:first-child){display:block;font-family:"Inter";font-size:13px;font-weight:400;color:#6c757d;padding:5px 0;transition:color 0.2s,
+        padding-left 0.15s}
+.mega-drop-col a:not(:first-child):hover{color:#c4a962;padding-left:4px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 45%,
+          rgba(255, 182, 0, 0.07) 0%,
+          transparent 65%),
+        radial-gradient(ellipse 35% 60% at 5% 85%,
+          rgba(255, 182, 0, 0.04) 0%,
+          transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;top:-80px;right:-80px;width:500px;height:500px;border:1px solid rgba(255, 182, 0, 0.06);border-radius:50%;pointer-events:none}
+.hero .h1{margin-bottom:20px;font-size:52px;font-weight:700;letter-spacing:-0.02em;color:#f8f9fa}
+.hero-search:focus-within{border-color:#ffb600}
+.hero-search input{flex:1;padding:14px 18px;background:transparent;border:none;outline:none;font-family:"Inter";font-size:14px;font-weight:400;color:#fff}
+.hero-search input::placeholder{color:rgba(255, 255, 255, 0.38);font-size:13px;font-weight:300}
+.hero-search button{background:#c4a962;border:none;padding:0 28px;cursor:pointer;color:#0a1c36;font-family:"Inter";font-size:14px;font-weight:600;transition:background 0.2s;white-space:nowrap}
+.hero-search button:hover{background:#0a1c36;color:#ffffff}
+.hb-text strong{display:block;font-family:"Inter";text-align:left;font-size:13px;font-weight:600;color:#fff}
+.hb-text span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.45)}
+.trust-bar .container{display:grid;grid-template-columns:repeat(5, 1fr)}
+.trust-item:last-child{border-right:none}
+.trust-item:hover{background:#f8f9fa}
+.ti-text strong{display:block;font-family:"Inter";font-size:13px;font-weight:600;color:#212529}
+.ti-text span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:#6c757d}
+.stats-bar .container{display:flex;justify-content:center}
+.stat:last-child{border-right:none}
+.stat .num{font-family:"Inter";font-size:28px;font-weight:600;color:#0a1c36;display:block}
+.stat .lbl{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:#6c757d}
+.breadcrumb a:hover{color:#ffb600}
+.breadcrumb .sep{color:#e0e0e0;font-size:11px}
+.breadcrumb .cur{color:#212529;font-weight:500}
+.sec-head .sub{font-family:"Inter";font-size:17px;font-weight:400;line-height:1.5;color:#6c757d;margin-top:8px}
+.sec-head.center .sub{max-width:480px;margin-left:auto;margin-right:auto}
+.cat-card:hover{border-color:#ffb600;box-shadow:0 8px 28px rgba(255, 182, 0, 0.14);transform:translateY(-3px)}
+.cat-card:hover .cat-ico{background:rgba(255, 182, 0, 0.12);color:#c4a962}
+.cat-card strong{font-family:"Inter";font-size:14px;font-weight:600;color:#212529}
+.cat-card span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:#6c757d}
+.filter-acc-header span{font-family:"Inter";font-size:13px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#0a1c36}
+.filter-acc-header i{font-size:11px;color:#212529;transition:transform 0.3s}
+.filter-acc-item.open .filter-acc-header i{transform:rotate(180deg)}
+.filter-acc-item.open .filter-acc-content{display:block}
+.filter-list li{margin-bottom:12px}
+.filter-item-row:hover{color:#0a1c36}
+.cat-tree .main-cat{font-weight:600;color:#0a1c36;font-family:"Inter";margin-bottom:12px;display:block;font-size:13px}
+.sub-cat-list a{font-size:14px}
+.sub-sub-cat-list a{font-size:12px}
+.sub-cat-list li{margin-bottom:8px}
+.sub-cat-link:hover{color:#0a1c36}
+.cat-group:last-child{border-bottom:none}
+.main-cat-header:hover .main-cat{color:#c4a962}
+.main-cat-header i{font-size:11px;color:#adb5bd;transition:transform 0.3s ease}
+.cat-group.open .main-cat-header i{transform:rotate(180deg)}
+.cat-group .sub-cat-list{display:none;overflow:hidden}
+.cat-group.open .sub-cat-list{display:block;animation:slideDown 0.3s ease-out}
+.sub-sub-cat-list li{margin-bottom:4px}
+.sub-sub-cat-link:hover{color:#c4a962}
+.prod-card:hover{box-shadow:0 16px 48px rgba(10, 28, 54, 0.18)}
+.prod-card:hover .prod-name{color:#c4a962}
+.prod-img .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:rgba(255, 255, 255, 0.3);font-size:48px}
+.ph img{width:60% !important}
+.prod-img img{width:100%;height:100%;object-fit:contain;transition:transform 0.4s}
+.prod-card:hover .prod-img img{transform:scale(1.06)}
+.prod-card:hover .pwish{opacity:1;transform:scale(1)}
+.pwish:hover{background:#ffb600;border-color:#ffb600;color:#0a1c36}
+.prod-ref i{font-size:10px;color:#198754}
+.btn-cart:hover{background:#c4a962}
+.promo::before{content:"";position:absolute;right:-50px;bottom:-50px;width:240px;height:240px;border-radius:50%;opacity:0.07}
+.promo-dark::before{background:#ffb600}
+.promo-gold-bg::before{background:#0a1c36}
+.promo .plabel{font-family:"Inter";font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:10px}
+.promo-dark .plabel{color:rgba(255, 182, 0, 0.6)}
+.promo-gold-bg .plabel{color:rgba(10, 28, 54, 0.45)}
+.promo .h3{margin-bottom:10px}
+.promo-dark .h3{color:#ffffff}
+.promo-gold-bg .h3{color:#0a1c36}
+.promo .pbody{font-family:"Inter";font-size:17px;font-weight:400;line-height:1.5;margin-bottom:26px}
+.promo-dark .pbody{color:rgba(255, 255, 255, 0.6)}
+.promo-gold-bg .pbody{color:rgba(10, 28, 54, 0.65)}
+.brands-wrap .h2{margin:8px 0 6px}
+.brand:hover{color:#0a1c36}
+.w24-slider-track:active{cursor:grabbing}
+.w24-review-card:hover{background:rgba(255, 255, 255, 0.05);border-color:#c4a962;transform:translateY(-5px)}
+.w24-quote i{color:#c4a962;font-size:18px;margin-bottom:15px;display:block}
+.w24-quote p{color:rgba(255, 255, 255, 0.85);font-size:15px;line-height:1.6;min-height:100px}
+.w24-user-info strong{display:block;color:#fff;font-size:14px}
+.w24-user-info span{font-size:12px;color:rgba(255, 255, 255, 0.5)}
+.eapps-instagram-feed-posts-item img{transition:transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important}
+.eapps-instagram-feed-posts-item:hover img{transform:scale(1.1) !important}
+.eapps-instagram-feed-posts-item::after{content:"";position:absolute;inset:0;background:rgba(10, 28, 54, 0.6);opacity:0;transition:0.4s ease}
+.eapps-instagram-feed-posts-item:hover::after{opacity:1}
+.eapps-instagram-feed>div:last-child{display:none !important}
+.brands-title::before{content:"OUR PARTNERS";font-family:"Inter";font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c4a962}
+.brand-item img{max-width:100%;height:200px;max-height:200px;object-fit:contain;filter:grayscale(100%);opacity:0.6;transition:0.3s;user-select:none}
+.brand-item img:hover{filter:grayscale(0%);opacity:1}
+.slider-btn:hover{background:#f8f9fa;border-color:#0a1c36}
+.ft-bar .container{display:grid;grid-template-columns:repeat(3, 1fr)}
+.ft-item:last-child{border-right:none}
+.ft-text strong{display:block;font-family:"Inter";font-size:14px;font-weight:600;color:#fff;margin-bottom:3px}
+.ft-text span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.45)}
+.f-brand .logo{display:flex;justify-content:flex-start;align-items:center;margin-left:-13px;margin-bottom:40px}
+.f-brand .logo img{width:170px;height:auto;object-fit:contain;margin-bottom:10px;margin-left:2px}
+.f-brand p{margin-top:-50px;font-family:"Inter";font-size:12px;font-weight:400;line-height:1.8;max-width:270px}
+.soc:hover{background:#ffb600;color:#0a1c36;border-color:#ffb600}
+.f-ci i{color:#c4a962;font-size:13px;margin-top:3px;flex-shrink:0}
+.f-ci span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.5)}
+.f-col h4{font-family:"Inter";font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:#ffffff;margin-bottom:18px}
+.f-col h4.mt{margin-top:22px}
+.f-col ul{padding:0;list-style:none}
+.f-col ul li{margin-bottom:9px}
+.f-col ul li a{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.5);transition:color 0.2s}
+.f-col ul li a:hover{color:#ffb600}
+.f-sup:last-child{border-right:none}
+.f-sup i{font-size:18px;color:#c4a962;flex-shrink:0}
+.f-sup strong{display:block;font-family:"Inter";font-size:13px;font-weight:600;color:#fff}
+.f-sup span{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.4)}
+.f-bottom p{font-family:"Inter";font-size:13px;font-weight:300;line-height:1.5;color:rgba(255, 255, 255, 0.4)}
+.mobile-filter-btn:hover{background:#c4a962;color:#0a1c36}
+.mobile-filter-btn i{font-size:14px}
+.filter-drawer-head h3{font-family:"Inter";font-size:18px;font-weight:600;color:#0a1c36}
+.filter-drawer-close:hover{color:#0a1c36;background:#f8f9fa}
+.btn-apply-filters:hover{background:#c4a962;color:#0a1c36}
+.btn-reset-filters:hover{color:#0a1c36;border-color:#0a1c36}
+.nav-mobile-item-header i{font-size:11px;transition:transform 0.3s}
+.nav-mobile-item.open .nav-mobile-item-header i{transform:rotate(180deg)}
+.nav-mobile-item.open .nav-mobile-sub{display:flex}
+.nav-mobile-sub a{padding:7px 0;font-family:"Inter";font-size:13px;color:#6c757d;transition:color 0.2s;display:block}
+.nav-mobile-group-header span a{font-family:"Inter";font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a1c36}
+.nav-mobile-sub a:hover{color:#c4a962}
+.nav-mobile-group:last-child{border-bottom:none}
+.nav-mobile-group-header span{font-family:"Inter";font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a1c36}
+.nav-mobile-group-header i{font-size:10px;color:#6c757d;transition:transform 0.25s}
+.nav-mobile-group.open .nav-mobile-group-header i{transform:rotate(180deg)}
+.nav-mobile-group-header:hover span{color:#c4a962}
+.nav-mobile-group.open .nav-mobile-group-links{display:flex}
+footer:not(:has(.footer-grid)){display:none !important}
+@media (min-width: 768px) and (max-width: 1199px){.shop-layout{grid-template-columns:1fr}.filter-sidebar{display:none}.mobile-filter-btn{display:inline-flex}.prod-grid{grid-template-columns:repeat(2, 1fr);gap:18px}.cats{grid-template-columns:repeat(3, 1fr)}.promo-grid{grid-template-columns:1fr 1fr}.hero{padding:60px 20px}.hero .h1{font-size:40px}.w24-review-card{width:calc((100% / 2) - 12px)}.container{padding:0 18px}.hdr{padding:12px 18px;gap:16px}.logo img{width:200px;margin-top:10px;height:auto}.topbar .container{grid-template-columns:1fr auto 1fr;gap:10px}.topbar-items{gap:12px;flex-wrap:nowrap;justify-content:center}.topbar .india-dropdown,.topbar a,.topbar span{font-size:11px}.topbar i{font-size:12px}nav>.nav-inner{display:flex;justify-content:center}.nav-item>a{padding:12px 14px;font-size:10px}.nav-mobile-toggle{display:none}.prod-grid,.prod-grid-4{grid-template-columns:repeat(2, 1fr) !important;gap:18px}.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.f-support{grid-template-columns:1fr;margin:0}.f-sup{padding:16px 0;border-right:none;border-bottom:1px solid rgba(255, 255, 255, 0.06)}.f-sup:last-child{border-bottom:none}.f-brand .logo img{margin-left:0}.ft-bar .container{grid-template-columns:1fr;gap:0}.ft-item{border-right:none;border-bottom:1px solid rgba(255, 255, 255, 0.07);padding:20px 0}.ft-item:last-child{border-bottom:none}}
+@media (max-width: 767px){.topbar{display:none}.container{padding:0 14px}.container h2{font-size:25px}header{position:sticky;top:0;z-index:200}.hdr{display:grid;grid-template-columns:auto 1fr auto auto;grid-template-rows:auto auto;align-items:center;gap:0px;padding:10px 14px}.sec-row{display:flex;flex-direction:column;align-items:flex-start;gap:16px}.logo{grid-column:1;grid-row:1;min-width:auto;width:auto;margin-left:0;display:flex;align-items:center}.logo img{width:210px;height:auto;display:block;margin-left:-18px;margin-top:0px}.nav-mobile-toggle{display:flex;align-items:center;justify-content:center;grid-column:4;grid-row:1}.hdr-icons{grid-column:3;grid-row:1;gap:12px;display:flex;align-items:center}.icon-btn{padding:6px 8px;display:flex;align-items:center;justify-content:center}.icon-btn span:not(.cbadge){display:none}.search-bar{grid-column:1 / -1;grid-row:2;width:100%}.bests h2{font-size:25px;margin-bottom:15px}nav>.nav-inner{display:none}.nav-mobile-menu{display:none;width:100%;max-height:80vh;overflow-y:auto;background:#ffffff;z-index:199;box-shadow:0 10px 15px rgba(0, 0, 0, 0.1)}.nav-mobile-menu.open{display:flex}.hero{padding:40px 14px}.hero .h1{font-size:28px;line-height:1.3}.hero-desc{font-size:14px}.hero-search{flex-direction:row}.hero-search button{width:auto;padding:0 16px}.hero-badges{gap:14px;flex-wrap:wrap;justify-content:center}.hb-text span{display:none}.cats{grid-template-columns:repeat(2, 1fr)}.promo-grid{grid-template-columns:1fr}.promo{padding:32px 24px;min-height:180px}.slider-outer{padding:0 32px}.brand-item{width:140px;height:120px}.brand-item img{height:120px}.w24-reviews-sec{padding:60px 0}.w24-review-card{width:100%}.shop-layout{grid-template-columns:1fr;gap:0;padding:4px 0 32px}.filter-sidebar{display:none}.mobile-filter-btn{display:inline-flex;width:100%;justify-content:center;margin-bottom:10px}.prod-grid{grid-template-columns:1fr !important;gap:14px}.prod-img-wrap{height:200px}.prod-body{padding:12px 14px;gap:5px}.prod-name{font-size:14px}.pprice{font-size:18px}.btn-cart{font-size:13px;padding:10px}.prod-wish{opacity:1;transform:scale(1)}.trust-bar .container{grid-template-columns:repeat(2, 1fr)}.stats-bar .container{flex-direction:column;align-items:flex-start;gap:0}.stat{padding:10px 0;border-right:none;border-bottom:1px solid #e0e0e0;width:100%}.stat:last-child{border-bottom:none}.stat .num{font-size:22px}footer{padding:10px 0 0}.footer-grid{grid-template-columns:1fr;gap:28px;padding-bottom:28px}.f-brand .logo{margin-left:0}.f-brand p{max-width:100%}.f-brand .logo img{margin-left:-10px}.f-support{grid-template-columns:1fr;margin:0}.f-sup{border-right:none;border-bottom:1px solid rgba(255, 255, 255, 0.06);padding:14px 0}.f-sup:last-child{border-bottom:none}.f-bottom{flex-direction:column;align-items:center;gap:10px;padding:14px 0}.f-pays{flex-wrap:wrap;gap:6px}.ft-bar{padding:24px 0}.ft-bar .container{grid-template-columns:1fr;gap:0}.ft-item{border-right:none;padding:16px 0;border-bottom:1px solid rgba(255, 255, 255, 0.07)}.ft-item:last-child{border-bottom:none}.btn,.btn-cart,.icon-btn{min-height:44px}.seen-bar{padding:18px 16px}.seen-bar p{font-size:14px}}
+</style>
+</head>
+
+<body style="font-family:&quot;Inter&quot;;font-size:16px;font-weight:400;line-height:1.6;color:#212529;background:#ffffff;-webkit-font-smoothing:antialiased;font-family:&quot;Inter&quot;;font-size:16px;font-weight:400;line-height:1.5;color:#212529;background:#ffffff;-webkit-font-smoothing:antialiased">
+  <!-- TOP BAR -->
+  <div class="topbar" style="background:#0a1c36;padding:10px 0;border-bottom:1px solid rgba(255, 182, 0, 0.12)">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <div class="topbar-items" style="display:flex;gap:32px;align-items:center">
+        <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><i class="fa-solid fa-truck"></i> Free Delivery</a>
+        <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><i class="fa-solid fa-arrow-rotate-left"></i> 14 Day Return
+          Policy</a>
+        <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><i class="fa-solid fa-dollar-sign"></i> Secure Payment Methods</a>
+        <a href="tel:+4922198259056" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><i class="fa-solid fa-phone"></i> Service: 0176 55797207</a>
+      </div>
+      <div class="india-dropdown">
+        <i class="fa-solid fa-globe"></i> India (USD)
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+  </div>
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        HEADER
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <header style="background:#ffffff;border-bottom:1px solid #e0e0e0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(10, 28, 54, 0.07)">
+    <div class="hdr" style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px">
+      <div class="logo" style="font-family:&quot;Inter&quot;;font-size:26px;font-weight:300;color:#0a1c36;white-space:nowrap;min-width:170px;display:flex;justify-content:center;align-items:center;width:10%;margin-left:-25px">
+        <a href="/" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://i.postimg.cc/QMrV2cTK/Logo-Black-PNG.png" style="width:160px;height:auto;margin-top:0" /></a>
+      </div>
+      <div class="search-bar" style="flex:1;display:flex;border:1.5px solid #e0e0e0;border-radius:6px;overflow:hidden;background:#f8f9fa;transition:border-color 0.2s,
+        box-shadow 0.2s"><input style="flex:1;padding:11px 16px;border:none;outline:none;background:transparent;font-family:'Inter';font-size:13px;font-weight:400;color:#212529" type="text" placeholder="Search for brands, models..." />
+        <button type="submit" style="background:#c4a962;border:none;padding:0 20px;cursor:pointer;color:#0a1c36;font-size:15px;transition:background 0.2s">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <div class="hdr-icons" style="display:flex;gap:4px">
+        <button class="icon-btn" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 12px;border-radius:6px;font-family:&quot;Inter&quot;;font-size:11px;font-weight:500;color:#6c757d;cursor:pointer;transition:color 0.2s,
+        background 0.2s;border:none;background:none;position:relative"><i class="fa-regular fa-user" style="font-size:18px"></i>
+          <span>Account</span>
+        </button>
+        <button class="icon-btn" style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 12px;border-radius:6px;font-family:&quot;Inter&quot;;font-size:11px;font-weight:500;color:#6c757d;cursor:pointer;transition:color 0.2s,
+        background 0.2s;border:none;background:none;position:relative"><i class="fa-regular fa-heart" style="font-size:18px"></i>
+          <span>Wishlist</span>
+        </button>
+        <button class="icon-btn" style="position: relative;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 12px;border-radius:6px;font-family:&quot;Inter&quot;;font-size:11px;font-weight:500;color:#6c757d;cursor:pointer;transition:color 0.2s,
+        background 0.2s;border:none;background:none;position:relative"><i class="fa-solid fa-cart-shopping" style="font-size:18px"></i>
+          <span class="cbadge" style="position:absolute;top:4px;right:7px;background:#c4a962;color:#0a1c36;font-size:9px;font-weight:700;border-radius:50%;width:15px;height:15px;display:flex;align-items:center;justify-content:center">0</span>
+          <span>Cart</span>
+        </button>
+      </div>
+      <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Open navigation" style="display:none;background:none;border:none;font-size:22px;color:#0a1c36;cursor:pointer;padding:6px">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        NAVIGATION
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <nav style="background:#ffffff;border-bottom:2px solid #e0e0e0;position:relative">
+    <div class="nav-inner" style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:center">
+      <div class="nav-item" style="position:relative">
+        <a href="/womens-watches" class="active" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Ladies</a>
+        <div class="mega-drop" style="display:none;position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%);background:#ffffff;border-top:2px solid #c4a962;border-bottom:1px solid #e0e0e0;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;box-shadow:0 6px 24px rgba(10, 28, 54, 0.12);padding:24px 28px;z-index:400;min-width:520px">
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bags</a>
+            <a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Handbags</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Eyeglasses</a>
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Frame</a>
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sunglasses</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Jewellery</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Keyrings</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bracelets</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Charms &amp; Beads</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Earrings</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Necklaces</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/womens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Watches</a>
+            <a href="/womens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item" style="position:relative">
+        <a href="/mens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">MEN</a>
+        <div class="mega-drop" style="display:none;position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%);background:#ffffff;border-top:2px solid #c4a962;border-bottom:1px solid #e0e0e0;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;box-shadow:0 6px 24px rgba(10, 28, 54, 0.12);padding:24px 28px;z-index:400;min-width:520px">
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bags</a>
+            <a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sports Bags</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Clothing</a>
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Pullover</a>
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Scarves and Shawls</a>
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Shorts</a>
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">T-Shirt</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Eyeglasses</a>
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Frame</a>
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sunglasses</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Jewellery</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bracelets</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/mens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Watches</a>
+            <a href="/mens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item" style="position:relative">
+        <a href="/kids" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">KIDS</a>
+        <div class="mega-drop" style="display:none;position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%);background:#ffffff;border-top:2px solid #c4a962;border-bottom:1px solid #e0e0e0;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0;box-shadow:0 6px 24px rgba(10, 28, 54, 0.12);padding:24px 28px;z-index:400;min-width:520px">
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Eyeglasses</a>
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sunglasses</a>
+          </div>
+          <div class="mega-drop-col" style="flex:1;min-width:120px;padding:0 12px;border-right:1px solid #e0e0e0">
+            <a href="/kids" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Watches</a>
+            <a href="/kids" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV MENU -->
+  <div class="nav-mobile-menu" id="navMobileMenu" style="display:none;flex-direction:column;background:#ffffff;border-bottom:2px solid #e0e0e0">
+    <!-- LADIES -->
+    <div class="nav-mobile-item" style="border-bottom:1px solid #e0e0e0">
+      <div class="nav-mobile-item-header" style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;font-family:&quot;Inter&quot;;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#212529;cursor:pointer;user-select:none">
+        <a href="/womens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">LADIES</a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="nav-mobile-sub" style="display:none;flex-direction:column;background:#f8f9fa;padding:8px 15px 12px 32px;border-top:1px solid #e0e0e0;margin-right:10px">
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bags</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Handbags</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Eyeglasses</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Frame</a>
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sunglasses</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Jewellery</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Keyrings</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bracelets</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Charms &amp; Beads</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Earrings</a>
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Necklaces</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/womens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Watches</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/womens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEN -->
+    <div class="nav-mobile-item" style="border-bottom:1px solid #e0e0e0">
+      <div class="nav-mobile-item-header" style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;font-family:&quot;Inter&quot;;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#212529;cursor:pointer;user-select:none">
+        <a href="/mens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">MEN</a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="nav-mobile-sub" style="display:none;flex-direction:column;background:#f8f9fa;padding:8px 15px 12px 32px;border-top:1px solid #e0e0e0;margin-right:10px">
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bags</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/bags" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sports Bags</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Clothing</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Pullover</a>
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Scarves and Shawls</a>
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Shorts</a>
+            <a href="/clothings" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">T-Shirt</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Eyeglasses</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Frame</a>
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sunglasses</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Jewellery</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/jewelry" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Bracelets</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/mens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Watches</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/mens-watches" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KIDS -->
+    <div class="nav-mobile-item" style="border-bottom:1px solid #e0e0e0">
+      <div class="nav-mobile-item-header" style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;font-family:&quot;Inter&quot;;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#212529;cursor:pointer;user-select:none">
+        <a href="/kids" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">KIDS</a>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="nav-mobile-sub" style="display:none;flex-direction:column;background:#f8f9fa;padding:8px 15px 12px 32px;border-top:1px solid #e0e0e0;margin-right:10px">
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Eyeglasses</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/glasses" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Sunglasses</a>
+          </div>
+        </div>
+        <div class="nav-mobile-group" style="border-bottom:1px solid rgba(0, 0, 0, 0.05);margin-bottom:2px">
+          <div class="nav-mobile-group-header" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer;user-select:none">
+            <span><a href="/kids" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Watches</a></span><i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="nav-mobile-group-links" style="display:none;flex-direction:column;padding:0 0 10px 14px">
+            <a href="/kids" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Wristwatches</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        HERO
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <section class="hero" style="background:#0a1c36;padding:80px 24px 64px;position:relative;overflow:hidden">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <div class="hero-content" style="max-width:900px;position:relative;z-index:1;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center">
+        <span class="label fu" style="font-family:&quot;Inter&quot;;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#c4a962;display:block;margin-bottom:10px;animation:fadeUp 0.55s ease both">Luxury</span>
+        <h1 class="h1 fu d1" style="font-family:&quot;Inter&quot;;font-size:52px;font-weight:700;line-height:1.2;letter-spacing:-0.02em;font-family:&quot;Inter&quot;;font-size:52px;font-weight:700;line-height:1.2;letter-spacing:-0.02em;animation:fadeUp 0.55s ease both;animation-delay:0.08s">
+          <span class="highlight">Find Your Perfect</span><br />
+          <em style="color: #c4a962">Timepiece</em>
+        </h1>
+        <p class="hero-desc fu d2" style="margin: 0 0 36px 0 !important; padding: 0 !important; text-align: center !important;;font-family:&quot;Inter&quot;;font-size:17px;font-weight:400;line-height:1.5;color:rgba(255, 255, 255, 0.65);max-width:480px;margin-bottom:36px;animation:fadeUp 0.55s ease both;animation-delay:0.18s">Discover authenticated luxury watches from trusted sellers worldwide. Every watch guaranteed.</p>
+        <div class="hero-search fu d3" style="display:flex;width:100%;max-width:560px;border:1.5px solid rgba(255, 255, 255, 0.14);border-radius:6px;overflow:hidden;background:rgba(255, 255, 255, 0.05);backdrop-filter:blur(8px);margin-bottom:48px;transition:border-color 0.2s;animation:fadeUp 0.55s ease both;animation-delay:0.28s">
+          <input type="text" placeholder="Search for Patek Philippe,Guess.." />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="hero-badges fu d4" style="display:flex;gap:32px;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.55s ease both;animation-delay:0.38s">
+          <div class="hero-badge" style="display:flex;align-items:center;gap:12px;text-align:left;display:flex;align-items:center;gap:12px">
+            <div class="hb-icon" style="width:44px;height:44px;border-radius:50%;background:rgba(255, 182, 0, 0.1);border:1px solid rgba(255, 182, 0, 0.22);display:flex;align-items:center;justify-content:center;color:#c4a962;font-size:16px;flex-shrink:0">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="hb-text" style="text-align:left">
+              <strong>100% Original</strong><span>Last updated: March 2026</span>
+            </div>
+          </div>
+          <div class="hero-badge" style="display:flex;align-items:center;gap:12px;text-align:left;display:flex;align-items:center;gap:12px">
+            <div class="hb-icon" style="width:44px;height:44px;border-radius:50%;background:rgba(255, 182, 0, 0.1);border:1px solid rgba(255, 182, 0, 0.22);display:flex;align-items:center;justify-content:center;color:#c4a962;font-size:16px;flex-shrink:0"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="hb-text" style="text-align:left">
+              <strong>Free Shipping</strong><span>Over 99 â‚¬ order value</span>
+            </div>
+          </div>
+          <div class="hero-badge" style="display:flex;align-items:center;gap:12px;text-align:left;display:flex;align-items:center;gap:12px">
+            <div class="hb-icon" style="width:44px;height:44px;border-radius:50%;background:rgba(255, 182, 0, 0.1);border:1px solid rgba(255, 182, 0, 0.22);display:flex;align-items:center;justify-content:center;color:#c4a962;font-size:16px;flex-shrink:0"><i class="fa-solid fa-rotate-left"></i></div>
+            <div class="hb-text" style="text-align:left">
+              <strong>30 Day Returns</strong><span>Easy returns</span>
+            </div>
+          </div>
+          <div class="hero-badge" style="display:flex;align-items:center;gap:12px;text-align:left;display:flex;align-items:center;gap:12px">
+            <div class="hb-icon" style="width:44px;height:44px;border-radius:50%;background:rgba(255, 182, 0, 0.1);border:1px solid rgba(255, 182, 0, 0.22);display:flex;align-items:center;justify-content:center;color:#c4a962;font-size:16px;flex-shrink:0"><i class="fa-solid fa-certificate"></i></div>
+            <div class="hb-text" style="text-align:left">
+              <strong>2 Year Warranty</strong><span>On all products</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar" style="background:#f8f9fa;border-bottom:1px solid #e0e0e0;padding:18px 0">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <div class="stat" style="text-align:center;padding:0 56px;border-right:1px solid #e0e0e0">
+        <span class="num">4.9 / 5</span><span class="lbl">Customer Rating</span>
+      </div>
+      <div class="stat" style="text-align:center;padding:0 56px;border-right:1px solid #e0e0e0">
+        <span class="num">15,000+</span><span class="lbl">Happy Customers</span>
+      </div>
+      <div class="stat" style="text-align:center;padding:0 56px;border-right:1px solid #e0e0e0">
+        <span class="num">Since 2010</span><span class="lbl">Online</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANDS SLIDER -->
+  <section class="brands-section" style="padding:70px 0 10px 0;background:#fff;border-top:1px solid #e0e0e0">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <!-- Luxury Heading Style -->
+      <h2 class="brands-title" style="font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:40px;font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;color:#0a1c36;text-transform:none;letter-spacing:normal">Renowned Manufacturers</h2>
+
+      <div class="slider-outer" style="position:relative;padding:0 48px">
+        <button class="slider-btn btn-prev" id="prevBtn" style="position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:1px solid #e0e0e0;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:0.2s;left:0">â†</button>
+        <div class="slider-wrapper" id="sliderWrapper" style="position:relative;overflow:hidden;width:100%">
+          <div class="slider-track" id="sliderTrack" style="display:flex;align-items:center;width:max-content;will-change:transform">
+            <!-- We duplicate the set of brands to ensure the infinite loop works -->
+            <!-- SET 1 -->
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/Guess-Logo.jpg" alt="Guess" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="uhren/versace-uhren" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/versace-3-logo.webp" alt="Versace" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="uhren/ice-watch" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/ICE-WATCH-logo.jpg" alt="Ice Watch" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="https://www.watchroom24.com/uhren/thomas-sabo/" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/Thomas-Sabo-logo.jpg" alt="Thomas Sabo" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="https://www.plein.com/de" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/Plein__2_.jpg" alt="Philipp Plein" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/EDENHOeLZER.jpg" alt="Edenholzer" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/versus_versace_lion_2013.png" alt="Versus" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="uhren/roamer" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/roamer-logo.jpg" alt="Roamer" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+
+            <!-- SET 2 (Duplicate for Loop) -->
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/Guess-Logo.jpg" alt="Guess" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="uhren/versace-uhren" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/versace-3-logo.webp" alt="Versace" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="uhren/ice-watch" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/ICE-WATCH-logo.jpg" alt="Ice Watch" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="https://www.watchroom24.com/uhren/thomas-sabo/" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/Thomas-Sabo-logo.jpg" alt="Thomas Sabo" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="https://www.plein.com/de" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/Plein__2_.jpg" alt="Philipp Plein" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/EDENHOeLZER.jpg" alt="Edenholzer" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/versus_versace_lion_2013.png" alt="Versus" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+            <div class="brand-unit" style="display:flex;align-items:center">
+              <div class="brand-item" style="flex-shrink:0;width:220px;height:200px;padding:0 32px;display:flex;align-items:center;justify-content:center">
+                <a href="uhren/roamer" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;"><img src="https://cdn03.plentymarkets.com/ciw7a3ibeo67/frontend/logo/roamer-logo.jpg" alt="Roamer" /></a>
+              </div>
+              <div class="divider" style="width:1px;height:40px;background:#e0e0e0;flex-shrink:0"></div>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn btn-next" id="nextBtn" style="position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:1px solid #e0e0e0;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:0.2s;right:0">â†’</button>
+        <div class="fade-left" style="position:absolute;top:0;height:100%;width:100px;z-index:5;pointer-events:none;left:48px;background:linear-gradient(to right, #fff, transparent)"></div>
+        <div class="fade-right" style="position:absolute;top:0;height:100%;width:100px;z-index:5;pointer-events:none;right:48px;background:linear-gradient(to left, #fff, transparent)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        COLLECTIONS
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <section class="sec sec-alt" style="padding:20px 0;background:#f8f9fa">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <div class="sec-head center" style="margin-bottom:40px;text-align:center">
+        <span class="label" style="font-family:&quot;Inter&quot;;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#c4a962;display:block;margin-bottom:10px">Browse by Category</span>
+        <h2 class="h2" style="font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em;font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em">Our collections</h2>
+        <p class="sub">Discover our variety in every category</p>
+      </div>
+      <div class="cats" style="display:grid;grid-template-columns:repeat(5, 1fr);gap:16px">
+        <div class="cat-card" style="background:#ffffff;border:1.5px solid #e0e0e0;border-radius:10px;padding:28px 16px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s">
+          <div class="cat-ico" style="width:56px;height:56px;border-radius:50%;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#0a1c36;font-size:22px;transition:background 0.2s"><i class="fa-solid fa-clock"></i></div>
+          <strong>Women's Watches</strong><span>Elegance for her</span>
+        </div>
+        <div class="cat-card" style="background:#ffffff;border:1.5px solid #e0e0e0;border-radius:10px;padding:28px 16px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s">
+          <div class="cat-ico" style="width:56px;height:56px;border-radius:50%;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#0a1c36;font-size:22px;transition:background 0.2s"><i class="fa-solid fa-stopwatch"></i></div>
+          <strong>Men's Watches</strong><span>Strength meets style</span>
+        </div>
+        <div class="cat-card" style="background:#ffffff;border:1.5px solid #e0e0e0;border-radius:10px;padding:28px 16px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s">
+          <div class="cat-ico" style="width:56px;height:56px;border-radius:50%;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#0a1c36;font-size:22px;transition:background 0.2s"><i class="fa-solid fa-gem"></i></div>
+          <strong>Jewelry</strong><span>Exclusive Jewelry</span>
+        </div>
+        <div class="cat-card" style="background:#ffffff;border:1.5px solid #e0e0e0;border-radius:10px;padding:28px 16px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s">
+          <div class="cat-ico" style="width:56px;height:56px;border-radius:50%;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#0a1c36;font-size:22px;transition:background 0.2s"><i class="fa-solid fa-bag-shopping"></i></div>
+          <strong>Bags</strong><span>Designer Bags</span>
+        </div>
+        <div class="cat-card" style="background:#ffffff;border:1.5px solid #e0e0e0;border-radius:10px;padding:28px 16px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;transition:border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s">
+          <div class="cat-ico" style="width:56px;height:56px;border-radius:50%;background:#f8f9fa;display:flex;align-items:center;justify-content:center;color:#0a1c36;font-size:22px;transition:background 0.2s"><i class="fa-solid fa-glasses"></i></div>
+          <strong>Eyewear</strong><span>Sunglasses &amp; More</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        BREADCRUMB
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div class="breadcrumb" style="display:flex;align-items:center;gap:7px;font-family:&quot;Inter&quot;;font-size:13px;font-weight:300;line-height:1.5;color:#6c757d;padding:14px 0">
+      <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Home</a>
+      <span class="sep"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i></span>
+      <a href="#" style="text-decoration:none;color:inherit;font-family:&quot;Inter&quot;">Watches</a>
+      <span class="sep"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i></span>
+    </div>
+  </div>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        EXKLUSIVE AUSWAHL + FILTER
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <section class="sec" style="padding:20px 0">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px">
+      <div class="sec-row" style="margin-bottom:36px;display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <div class="bests" style="justify-content: left;">
+          <span class="label" style="font-family:&quot;Inter&quot;;font-size:13px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#c4a962;display:block;margin-bottom:10px">Handpicked Selection</span>
+          <h2 class="h2" style="font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em;font-family:&quot;Inter&quot;;font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-0.01em">Exclusive Selection</h2>
+          <p class="sub" style="margin: 4px 0 0 0 !important; padding: 0 !important; text-align: left !important; font-size: 17px; font-weight: 400; line-height: 1.5; color: #6c757d; font-family: Inter; display: block;">Handpicked luxury models for world standards</p>
+        </div>
+        <a href="#" class="btn btn-ghost" style="text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:6px;font-family:&quot;Inter&quot;;font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all 0.2s;white-space:nowrap;margin-top:15px;background:transparent;color:#6c757d;border:1.5px solid #e0e0e0;font-size:13px;padding:8px 18px;font-family:&quot;Inter&quot;">
+          View all<i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="shop-layout" style="display:grid;grid-template-columns:1fr;gap:24px;padding:8px 0 48px">
+
+        <!-- PRODUCTS -->
+        <div>
+          <div class="badge-row" style="margin-bottom: 18px;display:flex;gap:8px;flex-wrap:wrap">
+            <span class="tbadge protect" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-family:&quot;Inter&quot;;font-size:11px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;background:rgba(255, 182, 0, 0.12);color:#c4a962;border:1px solid rgba(255, 182, 0, 0.3)"><i class="fa-solid fa-shield-halved"></i> Buyer
+              Protection</span>
+            <span class="tbadge auth" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-family:&quot;Inter&quot;;font-size:11px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;background:rgba(10, 28, 54, 0.07);color:#0a1c36;border:1px solid rgba(10, 28, 54, 0.15)"><i class="fa-solid fa-circle-check"></i> Authenticated</span>
+            <span class="tbadge verified" style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-family:&quot;Inter&quot;;font-size:11px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;background:rgba(25, 135, 84, 0.1);color:#146c43;border:1px solid rgba(25, 135, 84, 0.25)"><i class="fa-solid fa-badge-check"></i> Verified Seller</span>
+          </div>
+
+        </div>
+      </div>
+      <!-- /shop-wrap -->
+    </div>
+  </section>
+</body></html>
